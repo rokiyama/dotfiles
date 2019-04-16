@@ -1,5 +1,5 @@
 set DOTFILES_DIR $HOME/.dotfiles
-set EXTERNALS_DIR $DOTFILES_DIR/externals
+set SUBMODULES $DOTFILES_DIR/submodules
 
 function myfunc_log
   echo -e "\e[0;32m"(date '+%Y/%m/%d %H:%M:%S.%3N')" $argv\e[m"
@@ -115,9 +115,9 @@ if status --is-interactive
   end
 
   # dircolors
-  if [ -d $EXTERNALS_DIR/dircolors-solarized ]
+  if [ -d $SUBMODULES/dircolors-solarized ]
     myfunc_log 'dircolors-solarized is installed'
-    eval (dircolors -c $EXTERNALS_DIR/dircolors-solarized/dircolors.ansi-universal)
+    eval (dircolors -c $SUBMODULES/dircolors-solarized/dircolors.ansi-universal)
   else
     myfunc_err 'dircolors-solarized is not installed.'
   end
