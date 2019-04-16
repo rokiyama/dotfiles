@@ -1,0 +1,60 @@
+" set background=dark
+colorscheme zellner
+
+augroup gvimrc
+  autocmd!
+augroup END
+
+set t_vb=
+
+" ウインドウの幅
+set columns=120
+" ウインドウの高さ
+set lines=52
+
+" マウスに関する設定:
+set mouse=a
+" マウスの移動でフォーカスを自動的に切替えない (mousefocus:切替る)
+set nomousefocus
+" 入力時にマウスポインタを隠す (nomousehide:隠さない)
+set mousehide
+" ビジュアル選択(D&D他)を自動的にクリップボードへ (:help guioptions_a)
+set guioptions+=a
+
+" フォント
+set antialias
+" メニュー、ツールバーを非表示
+set guioptions-=m
+set guioptions-=T
+" gVimでもテキストベースのタブページを使う
+set guioptions-=e
+
+" 全角文字を全角表示
+set ambiwidth=double
+
+" 日本語入力に関する設定
+if has('multi_byte_ime') || has('xim')
+  " IME ON時のカーソルの色を設定(設定例:紫)
+  highlight CursorIM guibg=Purple guifg=NONE
+  " 挿入モード・検索モードでのデフォルトのIME状態設定
+  set iminsert=0 imsearch=0
+endif
+
+if IsWindows()
+  "IME状態に応じたカーソル色を設定
+  if has('multi_byte_ime')
+    highlight Cursor guifg=#000d18 guibg=#8faf9f gui=bold
+    highlight CursorIM guifg=NONE guibg=#ff0000
+  end
+  " フォント
+  set guifont=MeiryoKe_Console:h9
+  set guifontwide=MeiryoKe_Console:h9
+
+elseif IsMac()
+  " 透明度を指定
+  set transparency=10
+  " フォント
+  set guifont="Noto Sans CJK Mono JP":h13
+  set guifontwide="Noto Sans CJK Mono JP":h13
+
+endif

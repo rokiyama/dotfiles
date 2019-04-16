@@ -1,0 +1,104 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+let g:lightline = {
+      \   'colorscheme': 'Tomorrow',
+      \   'component': {
+      \     'lineinfo': '%3l:%-2v',
+      \   },
+      \   'component_function': {
+      \     'readonly': 'LightlineReadonly',
+      \     'fugitive': 'LightlineFugitive',
+      \     'cwd': 'Cwd'
+      \   },
+      \   'separator': { 'left': '', 'right': '' },
+      \   'subseparator': { 'left': '', 'right': '' },
+      \   'active': {
+      \     'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'filename', 'modified' ] ],
+      \     'right': [ [ 'lineinfo' ],
+      \                [ 'percent' ],
+      \                [ 'fileformat', 'fileencoding', 'filetype' ],
+      \                [ 'cwd' ] ]
+      \   }
+      \ }
+function! LightlineReadonly()
+  return &readonly ? '' : ''
+endfunction
+function! LightlineFugitive()
+  if exists('*fugitive#head')
+    let branch = fugitive#head()
+    return branch !=# '' ? ''.branch : ''
+  endif
+  return ''
+endfunction
+function! Cwd()
+  return pathshorten(getcwd()) . '/'
+endfunction
+'''
+hook_source = '''
+set noshowmode
+'''
+
+#[[plugins]]
+#repo = 'thinca/vim-singleton'
+#if = "has('gui_running')"
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'wellle/targets.vim'
+
+[[plugins]]
+repo = 'tpope/vim-commentary'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'jiangmiao/auto-pairs'
+
+[[plugins]]
+repo = 'tomasr/molokai'
+hook_add = '''
+colorscheme molokai
+'''
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+hook_add = '''
+let g:deoplete#enable_at_startup = 1
+'''
+hook_source = '''
+call deoplete#custom#option({
+    \ 'auto_complete_delay': 0,
+    \ })
+'''
+
+[[plugins]]
+repo = 'aklt/plantuml-syntax'
+
+[[plugins]]
+repo = 'LeafCage/foldCC.vim'
+hook_add = '''
+let g:foldCCtext_enable_autofdc_adjuster = 1
+'''
+hook_source = '''
+set foldtext=FoldCCtext()
+'''
+
+[[plugins]]
+repo = 'w0rp/ale'
+hook_add = '''
+let g:ale_fixers = {
+      \   'javascript': [ 'prettier', 'prettier-eslint' ],
+      \   'vue': [ 'prettier', 'prettier-eslint' ],
+      \   'graphql': [ 'prettier' ],
+      \ }
+let g:ale_lint_on_text_changed = 0
+let g:ale_fix_on_save = 1
+'''

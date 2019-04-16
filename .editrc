@@ -1,0 +1,10 @@
+bind -e
+bind '^N' ed-search-next-history
+bind '^P' ed-search-prev-history
+bind '^R' em-inc-search-prev
+bind '^U' vi-kill-line-prev
+bind '^W' ed-delete-prev-word
+mysql:bind '\t' rl_complete
+
+mysql:bind -s "^xd" "show databases;"
+mysql:bind -s "^xt" "show tables;"

@@ -1,0 +1,42 @@
+[user]
+  name = anonymous
+  email = anonymous@example.com
+[core]
+  editor = nvim
+  pager = less
+  excludesfile = ~/.gitignore.global
+  autocrlf = false
+[color]
+  ui = auto
+[push]
+  default = simple
+[include]
+  path = ~/.gitconfig.local
+[diff "utf16"]
+  textconv = iconv -f utf-16 -t utf-8
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+[alias]
+  co  = checkout
+  b   = branch
+  ba  = branch -avv
+  s   = status -s -b
+  a   = add
+  ap  = add -p
+  c   = commit -v
+  ca  = commit -va
+  d   = diff
+  dc  = diff --cached
+  f   = fetch
+  l   = log --graph --oneline --decorate
+  la  = log --graph --all --oneline --decorate
+  lg  = log --graph --decorate --format=full
+  lga = log --graph --all --decorate --format=full
+  lp  = log --graph --decorate -p
+  pl  = pull
+  ps  = push
+  r   = remote
+  ra  = remote -v
