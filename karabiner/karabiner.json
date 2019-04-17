@@ -753,6 +753,14 @@
                     "to": {
                         "key_code": "return_or_enter"
                     }
+                },
+                {
+                    "from": {
+                        "key_code": "international2"
+                    },
+                    "to": {
+                        "key_code": "right_command"
+                    }
                 }
             ],
             "virtual_hid_keyboard": {
