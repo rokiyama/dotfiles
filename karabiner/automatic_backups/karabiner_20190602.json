@@ -729,7 +729,7 @@
                 }
             ],
             "name": "My profile",
-            "selected": true,
+            "selected": false,
             "simple_modifications": [
                 {
                     "from": {
@@ -1523,7 +1523,7 @@
                 }
             ],
             "name": "US Anker BTKey",
-            "selected": false,
+            "selected": true,
             "simple_modifications": [
                 {
                     "from": {
