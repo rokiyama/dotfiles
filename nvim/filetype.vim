@@ -10,4 +10,6 @@ augroup filetypedetect
   au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn}.{des3,des,bf,bfa,aes,idea,cast,rc2,rc4,rc5,desx} setfiletype markdown
   " nodoka
   au BufNewFile,BufRead *.mayu,*.nodoka setfiletype nodoka
+
+  au BufNewFile,BufRead *.ts setfiletype typescript
 augroup END

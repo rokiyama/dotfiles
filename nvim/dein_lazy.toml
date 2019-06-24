@@ -97,7 +97,7 @@ nnoremap <silent> <space>T :<C-u>NERDTreeToggle %:h<CR>
 
 #[[plugins]]
 #repo = 'tpope/vim-endwise'
-#filetypes = 'ruby'
+#on_ft = 'ruby'
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
@@ -127,19 +127,19 @@ on_cmd = 'OpenBrowser'
 
 #[[plugins]]
 #repo = 'hail2u/vim-css3-syntax'
-#filetypes = 'css'
+#on_ft = 'css'
 
 #[[plugins]]
 #repo = 'othree/html5.vim'
-#filetypes = 'html'
+#on_ft = 'html'
 
 #[[plugins]]
 #repo = 'pangloss/vim-javascript'
-#filetypes = 'javascript'
+#on_ft = 'javascript'
 
-#[[plugins]]
-#repo = 'leafgarland/typescript-vim'
-#filetypes = 'typescript'
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = 'typescript'
 
 [[plugins]]
 repo = 'cespare/vim-toml'
