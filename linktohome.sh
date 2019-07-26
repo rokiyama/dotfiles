@@ -32,6 +32,9 @@ ln -s -f $dotfiles_dir/fish/fishfile                            $HOME/.config/fi
 [ -d $HOME/.config/powerline ]                      || mkdir -p $HOME/.config/powerline
 ln -s -f $dotfiles_dir/powerline/config.json                    $HOME/.config/powerline/config.json
 
+[ -d $HOME/.config/yamllint ]                       || mkdir -p $HOME/.config/yamllint
+ln -s -f $dotfiles_dir/yamllint/config                          $HOME/.config/yamllint/config
+
 [ -d /usr/local/opt/alacritty/Applications/Alacritty.app ] && \
   [ ! -d /Applications/Alacritty.app ] && \
   ln -s -f /usr/local/opt/alacritty/Applications/Alacritty.app /Applications/Alacritty.app
