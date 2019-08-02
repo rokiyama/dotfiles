@@ -137,6 +137,7 @@ if status --is-interactive
   alias gst='git status -s -b; echo "[user]"; git config --local -l | grep user; or git config --global -l | grep user; or printf unspecified'
 
   alias cmpo='docker-compose'
+  alias k='kubectl'
 
   # nvim
   if type nvim > /dev/null ^&1
