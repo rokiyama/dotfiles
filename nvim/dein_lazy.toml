@@ -21,7 +21,7 @@ nnoremap <silent> <space>h :<C-u>Denite help<CR>
 hook_source = '''
 if executable('rg')
   call denite#custom#var('file/rec', 'command', ['rg', '--files', '--glob', '!.git', '--hidden'])
-  call denite#custom#var('grep', 'command', ['rg', '--threads', '1', '-i'])
+  call denite#custom#var('grep', 'command', ['rg', '--threads', '1', '-S'])
   call denite#custom#var('grep', 'recursive_opts', [])
   call denite#custom#var('grep', 'final_opts', [])
   call denite#custom#var('grep', 'separator', ['--'])
