@@ -162,11 +162,13 @@ if status --is-interactive
     brew update; and brew outdated
     gem outdated
     npm outdated -g
+    pip-review
   end
 
   function upgrade-packages
     brew update; and brew upgrade
     gem update
     npm update -g
+    pip-review --auto
   end
 end

@@ -11,4 +11,4 @@ git submodule update
 
 [ $OSTYPE != "msys" ] && source ./linktohome.sh
 
-type pip3 > /dev/null 2>&1 && pip3 install neovim pynvim powerline-status powerline-gitstatus Send2Trash
+type pip3 > /dev/null 2>&1 && pip3 install pip-review neovim pynvim powerline-status powerline-gitstatus Send2Trash
