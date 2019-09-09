@@ -171,4 +171,8 @@ if status --is-interactive
     npm update -g
     pip-review --auto
   end
+
+  function jqe
+    echo $argv[1] | jq $argv[2]
+  end
 end
