@@ -192,6 +192,9 @@ repo = 'fatih/vim-go'
 on_ft = 'go'
 hook_add = '''
 let g:go_fmt_command = "goimports"
+let g:go_metalinter_autosave=1
+let g:go_metalinter_autosave_enabled=['golint', 'govet', 'typecheck']
+let g:go_metalinter_command='golangci-lint'
 '''
 
 [[plugins]]
@@ -206,11 +209,6 @@ on_map = 'K'
 [[plugins]]
 repo = 'posva/vim-vue'
 on_ft = 'vue'
-
-[[plugins]]
-repo = 'zchee/deoplete-go'
-on_ft = 'go'
-depends = 'deoplete.nvim'
 
 [[plugins]]
 repo = 'jparise/vim-graphql'
