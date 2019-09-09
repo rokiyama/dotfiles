@@ -92,7 +92,7 @@ set foldtext=FoldCCtext()
 '''
 
 [[plugins]]
-repo = 'w0rp/ale'
+repo = 'dense-analysis/ale'
 hook_add = '''
 let g:ale_fixers = {
       \   'javascript': [ 'prettier', 'prettier-eslint' ],
