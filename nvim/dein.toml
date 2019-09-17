@@ -5,12 +5,13 @@ repo = 'Shougo/dein.vim'
 repo = 'itchyny/lightline.vim'
 hook_add = '''
 let g:lightline = {
-      \   'colorscheme': 'Tomorrow',
+      \   'colorscheme': 'wombat',
       \   'component': {
       \     'lineinfo': '%3l:%-2v',
       \   },
       \   'component_function': {
       \     'readonly': 'LightlineReadonly',
+      \     'bomb': 'LightlineBomb',
       \     'fugitive': 'LightlineFugitive',
       \     'cwd': 'Cwd'
       \   },
@@ -18,7 +19,7 @@ let g:lightline = {
       \   'subseparator': { 'left': '', 'right': '' },
       \   'active': {
       \     'left': [ [ 'mode', 'paste' ],
-      \             [ 'readonly', 'filename', 'modified' ] ],
+      \             [ 'readonly', 'filename', 'modified', 'bomb' ] ],
       \     'right': [ [ 'lineinfo' ],
       \                [ 'percent' ],
       \                [ 'fileformat', 'fileencoding', 'filetype' ],
@@ -27,6 +28,9 @@ let g:lightline = {
       \ }
 function! LightlineReadonly()
   return &readonly ? '' : ''
+endfunction
+function! LightlineBomb()
+  return &bomb ? '💣💥[BOM]' : ''
 endfunction
 function! LightlineFugitive()
   if exists('*fugitive#head')
@@ -42,6 +46,7 @@ endfunction
 hook_source = '''
 set noshowmode
 '''
+
 
 #[[plugins]]
 #repo = 'thinca/vim-singleton'
