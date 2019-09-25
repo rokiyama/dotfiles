@@ -18,25 +18,6 @@ if status --is-interactive
     fish -c fisher
   end
 
-  # powerline
-  if type powerline > /dev/null ^&1
-    myfunc_log 'powerline is installed, loading fish bindings...'
-    set powerline_status_location (pip3 show powerline-status | grep 'Location: ' | cut -d' ' -f 2)
-    set fish_function_path $fish_function_path "$powerline_status_location/powerline/bindings/fish"
-    powerline-setup
-    powerline-daemon -q
-
-    # powerline for tmux
-    if [ -n "$TMUX" ]
-      myfunc_log 'powerline is installed and in tmux, loading tmux bindings...'
-      tmux source "$powerline_status_location/powerline/bindings/tmux/powerline.conf"
-    else
-      myfunc_log 'not in tmux'
-    end
-  else
-    myfunc_err 'powerline is not installed.'
-  end
-
   # brew
   if type brew > /dev/null ^&1
     myfunc_log 'brew is installed'
@@ -54,6 +35,25 @@ if status --is-interactive
     end
   else
     myfunc_err 'brew is not installed.'
+  end
+
+  # powerline
+  if type powerline > /dev/null ^&1
+    myfunc_log 'powerline is installed, loading fish bindings...'
+    set powerline_status_location (pip3 show powerline-status | grep 'Location: ' | cut -d' ' -f 2)
+    set fish_function_path $fish_function_path "$powerline_status_location/powerline/bindings/fish"
+    powerline-setup
+    powerline-daemon -q
+
+    # powerline for tmux
+    if [ -n "$TMUX" ]
+      myfunc_log 'powerline is installed and in tmux, loading tmux bindings...'
+      tmux source "$powerline_status_location/powerline/bindings/tmux/powerline.conf"
+    else
+      myfunc_log 'not in tmux'
+    end
+  else
+    myfunc_err 'powerline is not installed.'
   end
 
   # rbenv
