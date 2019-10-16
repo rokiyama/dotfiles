@@ -47,3 +47,6 @@ cask alacritty
 
 tap rcmdnk/file
 brew brew-file
+
+# Other Cask applications
+cask google-backup-and-sync
