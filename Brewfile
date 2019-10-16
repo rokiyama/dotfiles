@@ -22,6 +22,7 @@ brew luajit
 brew mas
 brew msgpack
 brew neovim
+brew nvm
 brew oniguruma
 brew openssl
 brew pcre2

@@ -26,9 +26,10 @@ if status is-interactive
     set PATH (brew --prefix coreutils)"/libexec/gnubin" $PATH
 
     # nvm
-    if [ -e "$HOME/.nvm" ]
+    if [ -e (brew --prefix)"/opt/nvm" ]
       myfunc_log 'nvm is installed'
-      set NVM_DIR "$HOME/.nvm"
+      set -x NVM_DIR "$HOME/.nvm"
+      set -x nvm_prefix (brew --prefix)"/opt/nvm"
       nvm use default
     else
       myfunc_err 'nvm is not installed.'
