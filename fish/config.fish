@@ -23,6 +23,7 @@ if status is-interactive
     myfunc_log 'brew is installed'
     set -x HOMEBREW_BREWFILE $HOME/.dotfiles/Brewfile
     set -x HOMEBREW_BREWFILE_ON_REQUEST 1
+    set -x HOMEBREW_BREWFILE_APPSTORE 0
     set PATH (brew --prefix coreutils)"/libexec/gnubin" $PATH
 
     # nvm
