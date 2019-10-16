@@ -16,20 +16,22 @@ augroup END
 let s:deindir = '~/.cache/dein'
 if isdirectory(expand(s:deindir))
   let &runtimepath = &runtimepath . ',' . s:deindir . '/repos/github.com/Shougo/dein.vim'
-endif
 
-if dein#load_state(s:deindir)
-  call dein#begin(s:deindir)
+  if dein#load_state(s:deindir)
+    call dein#begin(s:deindir)
 
-  call dein#load_toml('~/.config/nvim/dein.toml')
-  call dein#load_toml('~/.config/nvim/dein_lazy.toml', {'lazy' : 1})
+    call dein#load_toml('~/.config/nvim/dein.toml')
+    call dein#load_toml('~/.config/nvim/dein_lazy.toml', {'lazy' : 1})
 
-  call dein#end()
-  call dein#save_state()
+    call dein#end()
+    call dein#save_state()
 
-  if dein#check_install()
-    call dein#install()
+    if dein#check_install()
+      call dein#install()
+    endif
   endif
+else
+  echoerr 'dein is not installed'
 endif
 
 filetype plugin indent on
