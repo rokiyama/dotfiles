@@ -47,7 +47,7 @@ tap homebrew/cask
 cask alacritty
 cask docker
 cask karabiner-elements
-cask visual-studio-code
+cask qlmarkdown
 
 tap rcmdnk/file
 brew brew-file
@@ -56,3 +56,4 @@ brew brew-file
 cask discord
 cask google-backup-and-sync
 cask mattermost
+cask visual-studio-code
