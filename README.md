@@ -15,3 +15,7 @@
 
     # install neovim (on debian)
     sudo apt-add-repository -y ppa:neovim-ppa/unstable; and sudo apt update; and sudo apt install -y neovim python3-neovim; and sudo apt remove -y vim
+
+    # set LC_ALL (mac)
+    ln -s $HOME/.dotfiles/mac/setenv.LC_ALL.plist $HOME/Library/LaunchAgents/
+    launchctl load $HOME/Library/LaunchAgents/setenv.LC_ALL.plist
