@@ -45,9 +45,14 @@ cask font-noto-mono-for-powerline
 
 tap homebrew/cask
 cask alacritty
+cask docker
+cask karabiner-elements
+cask visual-studio-code
 
 tap rcmdnk/file
 brew brew-file
 
 # Other Cask applications
+cask discord
 cask google-backup-and-sync
+cask mattermost
