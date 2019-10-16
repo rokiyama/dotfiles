@@ -2,29 +2,30 @@
 # tap repositories and their packages
 
 tap homebrew/core
-brew amazon-ecs-cli
 brew awscli
-brew bash
-brew bash-completion@2
+brew bat
 brew coreutils
-brew docker-completion
-brew docker-compose-completion
 brew fish
 brew fzf
 brew gdbm
 brew gettext
 brew ghq
 brew git
-brew gnu-sed --with-default-names
 brew go
-brew grep --with-default-names
-brew htop
+brew hadolint
 brew jq
+brew libevent
+brew libtermkey
+brew libuv
+brew libvterm
 brew luajit
+brew mas
+brew msgpack
 brew neovim
-brew nvm
+brew oniguruma
 brew openssl
-brew pandoc
+brew pcre2
+brew python
 brew rbenv
 brew readline
 brew reattach-to-user-namespace
@@ -32,19 +33,17 @@ brew ripgrep
 brew ruby-build
 brew sqlite
 brew tmux
+brew trash
+brew unibilium
 brew wakeonlan
 brew xz
+brew yamllint
 
 tap homebrew/cask-fonts
 cask font-noto-mono-for-powerline
 
 tap homebrew/cask
-
-tap mscharley/homebrew
-brew alacritty --HEAD
+cask alacritty
 
 tap rcmdnk/file
 brew brew-file
-
-# Other Homebrew packages
-brew python3

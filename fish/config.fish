@@ -9,7 +9,7 @@ function myfunc_err
   echo -e "\e[0;31m"(date '+%Y/%m/%d %H:%M:%S.%3N')" $argv\e[m"
 end
 
-if status --is-interactive
+if status is-interactive
   # Fisher
   if not functions -q fisher
     myfunc_log 'Installing fisher for the first time...'
@@ -17,6 +17,10 @@ if status --is-interactive
     curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
     fish -c fisher
   end
+  myfunc_log 'Self-updating fisher...'
+  fisher self-update
+  myfunc_log 'Updating fisher packages...'
+  fisher
 
   # brew
   if type brew > /dev/null ^&1
