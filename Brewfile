@@ -26,6 +26,7 @@ brew nvm
 brew oniguruma
 brew openssl
 brew pcre2
+brew pkg-config
 brew python
 brew rbenv
 brew readline
@@ -35,6 +36,7 @@ brew ruby-build
 brew sqlite
 brew tmux
 brew trash
+brew unar
 brew unibilium
 brew wakeonlan
 brew xz
