@@ -1,5 +1,5 @@
 #!/bin/sh
-set -uex
+set -ux
 
 DOTFILES_DIR=~/.dotfiles
 
