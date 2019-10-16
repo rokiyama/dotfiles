@@ -41,7 +41,7 @@ brew xz
 brew yamllint
 
 tap homebrew/cask-fonts
-cask font-noto-mono-for-powerline
+cask font-fira-mono-for-powerline
 
 tap homebrew/cask
 cask alacritty
