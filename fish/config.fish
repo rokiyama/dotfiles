@@ -170,7 +170,7 @@ if status is-interactive
   function upgrade-packages
     brew update; and brew upgrade
     gem update
-    npm update -g
+    yarn global upgrade
     pip-review --auto
     fisher self-update
     fisher
