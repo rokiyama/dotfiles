@@ -85,12 +85,6 @@ if status is-interactive
   if type fzf > /dev/null ^&1
     myfunc_log 'fzf is installed'
 
-    # history search
-    function h
-      set cmd (history | fzf)
-      [ -n "$cmd" ]; and echo $cmd; and eval $cmd
-    end
-
     # ghq
     if type ghq > /dev/null ^&1
       myfunc_log 'ghq is installed'
@@ -106,8 +100,9 @@ if status is-interactive
     if type z > /dev/null ^&1
       myfunc_log 'z is installed'
       function j
-        set dirpath (z --list | fzf | tr -s ' ' | cut -d ' ' -f 2)
-        [ -n "$dirpath" ]; and cd $dirpath; or echo 'Canceled.'
+        # TODO: スペースのあるパスで正しく動作しない
+        z --list | eval (__fzfcmd) --tiebreak=index --toggle-sort=ctrl-r $FZF_DEFAULT_OPTS $FZF_REVERSE_ISEARCH_OPTS -q '(commandline)' | read -l _ result _
+        and commandline -- "cd '$result'"
       end
     else
       myfunc_err 'z is not installed.'
