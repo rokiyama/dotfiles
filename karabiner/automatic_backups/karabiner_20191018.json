@@ -555,46 +555,6 @@
                                 "type": "basic"
                             }
                         ]
-                    },
-                    {
-                        "description": "Change ¥ to Alt+¥",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "international3"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "international3",
-                                        "modifiers": [
-                                            "option"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Change Alt+¥ to ¥",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "international3",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "option"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "international3"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
                     }
                 ]
             },
@@ -769,9 +729,6 @@
                 }
             ],
             "name": "My profile",
-            "parameters": {
-                "delay_milliseconds_before_open_device": 1000
-            },
             "selected": true,
             "simple_modifications": [
                 {
@@ -923,9 +880,6 @@
                 }
             ],
             "name": "Default profile",
-            "parameters": {
-                "delay_milliseconds_before_open_device": 1000
-            },
             "selected": false,
             "simple_modifications": [],
             "virtual_hid_keyboard": {
@@ -1569,9 +1523,6 @@
                 }
             ],
             "name": "US Anker BTKey",
-            "parameters": {
-                "delay_milliseconds_before_open_device": 1000
-            },
             "selected": false,
             "simple_modifications": [
                 {
