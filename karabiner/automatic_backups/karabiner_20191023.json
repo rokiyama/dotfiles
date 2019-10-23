@@ -518,191 +518,38 @@
                         ]
                     },
                     {
-                        "description": "英数・かなキーを他のキーと組み合わせて押したときに、コマンドキーを送信する。",
+                        "description": "Change control + @[ to ecs keys",
                         "manipulators": [
                             {
-                                "from": {
-                                    "key_code": "japanese_eisuu",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_command"
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "japanese_eisuu"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "japanese_kana",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_command"
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "japanese_kana"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "right_command",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_command"
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "japanese_kana"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "コマンドキーをオプションキーに置き換える。",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "left_command",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_option"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Ctrl+[を押したときに、escキーと英数キーを送信する",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "keyboard_types": [
-                                            "ansi",
-                                            "iso"
-                                        ],
-                                        "type": "keyboard_type_if"
-                                    }
-                                ],
                                 "from": {
                                     "key_code": "open_bracket",
                                     "modifiers": {
                                         "mandatory": [
                                             "control"
-                                        ]
+                                        ],
+                                        "optional": []
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "escape"
-                                    },
-                                    {
-                                        "key_code": "japanese_eisuu"
                                     }
                                 ],
                                 "type": "basic"
                             },
                             {
-                                "conditions": [
-                                    {
-                                        "keyboard_types": [
-                                            "jis"
-                                        ],
-                                        "type": "keyboard_type_if"
-                                    }
-                                ],
                                 "from": {
                                     "key_code": "close_bracket",
                                     "modifiers": {
                                         "mandatory": [
                                             "control"
-                                        ]
+                                        ],
+                                        "optional": []
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "escape"
-                                    },
-                                    {
-                                        "key_code": "japanese_eisuu"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Exchange semicolon and colon",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "semicolon",
-                                    "modifiers": {
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "semicolon",
-                                        "modifiers": [
-                                            "left_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "semicolon",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "shift"
-                                        ],
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "semicolon"
                                     }
                                 ],
                                 "type": "basic"
@@ -897,18 +744,26 @@
                 },
                 {
                     "from": {
-                        "key_code": "left_option"
+                        "key_code": "international2"
                     },
                     "to": {
-                        "key_code": "fn"
+                        "key_code": "right_command"
                     }
                 },
                 {
                     "from": {
-                        "key_code": "international3"
+                        "key_code": "return_or_enter"
                     },
                     "to": {
-                        "key_code": "grave_accent_and_tilde"
+                        "key_code": "semicolon"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "semicolon"
+                    },
+                    "to": {
+                        "key_code": "return_or_enter"
                     }
                 }
             ],
