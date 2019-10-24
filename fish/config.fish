@@ -89,8 +89,8 @@ if status is-interactive
     if type ghq > /dev/null ^&1
       myfunc_log 'ghq is installed'
       function g
-        set repos (ghq list | fzf)
-        [ -n "$repos" ]; and cd (ghq root)"/$repos"; or echo 'Canceled.'
+        ghq list | eval (__fzfcmd) --tiebreak=index --toggle-sort=ctrl-r $FZF_DEFAULT_OPTS $FZF_REVERSE_ISEARCH_OPTS -q '(commandline)' | read -l result _
+        and commandline -- "cd '"(ghq root)"/$result'"
       end
     else
       myfunc_err 'ghq is not installed.'
