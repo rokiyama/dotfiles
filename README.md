@@ -11,7 +11,7 @@
 ## memo
 
     # set git username
-    git config --local user.name rokiyama && git config --local user.email '49217895+rokiyama@users.noreply.github.com'
+    git config --local user.name rokiyama-dev && git config --local user.email '57606749+rokiyama-dev@users.noreply.github.com'
 
     # install neovim (on debian)
     sudo apt-add-repository -y ppa:neovim-ppa/unstable && sudo apt update && sudo apt install -y neovim python3-neovim && sudo apt remove -y vim
