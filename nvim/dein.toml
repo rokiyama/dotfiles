@@ -96,15 +96,3 @@ let g:foldCCtext_enable_autofdc_adjuster = 1
 hook_source = '''
 set foldtext=FoldCCtext()
 '''
-
-[[plugins]]
-repo = 'dense-analysis/ale'
-hook_add = '''
-let g:ale_fixers = {
-      \   'javascript': [ 'prettier', 'prettier-eslint' ],
-      \   'vue': [ 'prettier', 'prettier-eslint' ],
-      \   'graphql': [ 'prettier' ],
-      \ }
-let g:ale_lint_on_text_changed = 0
-let g:ale_fix_on_save = 1
-'''

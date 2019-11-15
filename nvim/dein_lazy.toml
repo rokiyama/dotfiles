@@ -8,6 +8,7 @@ nnoremap <silent> <space>m  :<C-u>Denite file_mru<CR>
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 on_cmd = [ 'Denite', 'DeniteBufferDir' ]
+on_map = '<Plug>'
 hook_add = '''
 nnoremap <silent> <space>f :<C-u>Denite buffer<CR>
 nnoremap <silent> <space>r :<C-u>Denite file/rec<CR>
@@ -191,10 +192,12 @@ on_ft = 'nodoka'
 repo = 'fatih/vim-go'
 on_ft = 'go'
 hook_add = '''
-let g:go_fmt_command = "goimports"
-let g:go_metalinter_autosave=1
-let g:go_metalinter_autosave_enabled=['golint', 'govet', 'typecheck']
-let g:go_metalinter_command='golangci-lint'
+let g:go_fmt_command = 'goimports'
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = ['golint', 'govet', 'typecheck']
+let g:go_metalinter_command = 'golangci-lint'
+let g:go_def_mapping_enabled = 0
+let g:go_doc_keywordprg_enabled = 0
 '''
 
 [[plugins]]
@@ -213,3 +216,32 @@ on_ft = 'vue'
 [[plugins]]
 repo = 'jparise/vim-graphql'
 on_ft = 'graphql'
+
+[[plugins]]
+repo = 'autozimu/LanguageClient-neovim'
+build = 'bash install.sh'
+rev = 'next'
+on_ft = ['go']
+hook_add = '''
+set hidden
+let g:LanguageClient_serverCommands = {
+    \ 'go': ['gopls']
+    \ }
+let g:LanguageClient_loadSettings = 1
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+'''
+
+[[plugins]]
+repo = 'dense-analysis/ale'
+on_ft = ['javascript','vue','graphql']
+hook_add = '''
+let g:ale_fixers = {
+      \   'javascript': [ 'prettier', 'prettier-eslint' ],
+      \   'vue': [ 'prettier', 'prettier-eslint' ],
+      \   'graphql': [ 'prettier' ],
+      \ }
+let g:ale_lint_on_text_changed = 0
+let g:ale_fix_on_save = 1
+'''
