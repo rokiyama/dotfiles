@@ -21,7 +21,7 @@
   required = true
 [alias]
   co  = checkout
-  b   = branch
+  b   = branch -v
   ba  = branch -avv
   s   = status -s -b
   a   = add
