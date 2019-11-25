@@ -11,7 +11,9 @@
 ## memo
 
     # set git username
-    git config --local user.name rokiyama-dev && git config --local user.email '57606749+rokiyama-dev@users.noreply.github.com'
+    git config --local user.name rokiyama && git config --local user.email '57606749+rokiyama@users.noreply.github.com'
+
+    set -l USERNAME rokiyama && set -l USEREMAIL 57606749+rokiyama@users.noreply.github.com && git filter-branch -f --env-filter "GIT_AUTHOR_NAME='$USERNAME'; GIT_AUTHOR_EMAIL='$USEREMAIL'; GIT_COMMITTER_NAME='$USERNAME'; GIT_COMMITTER_EMAIL='$USEREMAIL';" HEAD
 
     # install neovim (on debian)
     sudo apt-add-repository -y ppa:neovim-ppa/unstable && sudo apt update && sudo apt install -y neovim python3-neovim && sudo apt remove -y vim
