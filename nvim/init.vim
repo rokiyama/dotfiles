@@ -232,6 +232,7 @@ function! s:Jq(...)
     let l:arg = a:1
   endif
   execute "%! jq \"" . l:arg . "\""
+  setf json
 endfunction
 command! -nargs=? Jq call s:Jq(<f-args>)
 
