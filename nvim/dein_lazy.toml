@@ -93,7 +93,7 @@ on_source = 'denite.nvim'
 repo = 'Shougo/unite-outline'
 on_source = 'denite.nvim'
 hook_add = '''
-nnoremap <silent> <space>o  :<C-u>Denite -winwidth=40 -mode=normal -split=vertical -no-quit outline<CR>
+nnoremap <silent> <space>o  :<C-u>Denite outline<CR>
 '''
 
 [[plugins]]
@@ -188,17 +188,17 @@ repo = 'https://raw.githubusercontent.com/mono0x/dotfiles/master/.vim/syntax/nod
 script_type = 'syntax'
 on_ft = 'nodoka'
 
-[[plugins]]
-repo = 'fatih/vim-go'
-on_ft = 'go'
-hook_add = '''
-let g:go_fmt_command = 'goimports'
-let g:go_metalinter_autosave = 1
-let g:go_metalinter_autosave_enabled = ['golint', 'govet', 'typecheck']
-let g:go_metalinter_command = 'golangci-lint'
-let g:go_def_mapping_enabled = 0
-let g:go_doc_keywordprg_enabled = 0
-'''
+# [[plugins]]
+# repo = 'fatih/vim-go'
+# on_ft = 'go'
+# hook_add = '''
+# let g:go_fmt_command = 'goimports'
+# let g:go_metalinter_autosave = 1
+# let g:go_metalinter_autosave_enabled = ['golint', 'govet', 'typecheck']
+# let g:go_metalinter_command = 'golangci-lint'
+# let g:go_def_mapping_enabled = 0
+# let g:go_doc_keywordprg_enabled = 0
+# '''
 
 [[plugins]]
 repo = 'dag/vim-fish'
@@ -217,31 +217,39 @@ on_ft = 'vue'
 repo = 'jparise/vim-graphql'
 on_ft = 'graphql'
 
-[[plugins]]
-repo = 'autozimu/LanguageClient-neovim'
-build = 'bash install.sh'
-rev = 'next'
-on_ft = ['go']
-hook_add = '''
-set hidden
-let g:LanguageClient_serverCommands = {
-    \ 'go': ['gopls']
-    \ }
-let g:LanguageClient_loadSettings = 1
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-'''
+# [[plugins]]
+# repo = 'autozimu/LanguageClient-neovim'
+# build = 'bash install.sh'
+# rev = 'next'
+# on_ft = ['go']
+# hook_add = '''
+# set hidden
+# let g:LanguageClient_serverCommands = {
+#     \ 'go': ['gopls']
+#     \ }
+# let g:LanguageClient_loggingLevel = 'INFO'
+# let g:LanguageClient_virtualTextPrefix = ''
+# let g:LanguageClient_loggingFile =  expand('~/.local/share/nvim/LanguageClient.log')
+# let g:LanguageClient_serverStderr = expand('~/.local/share/nvim/LanguageServer.log')
+# autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
+# nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+# nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+# nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+# '''
+
+# [[plugins]]
+# repo = 'dense-analysis/ale'
+# on_ft = ['javascript','vue','graphql']
+# hook_add = '''
+# let g:ale_fixers = {
+#       \   'javascript': [ 'prettier', 'prettier-eslint' ],
+#       \   'vue': [ 'prettier', 'prettier-eslint' ],
+#       \   'graphql': [ 'prettier' ],
+#       \ }
+# let g:ale_lint_on_text_changed = 0
+# let g:ale_fix_on_save = 1
+# '''
 
 [[plugins]]
-repo = 'dense-analysis/ale'
-on_ft = ['javascript','vue','graphql']
-hook_add = '''
-let g:ale_fixers = {
-      \   'javascript': [ 'prettier', 'prettier-eslint' ],
-      \   'vue': [ 'prettier', 'prettier-eslint' ],
-      \   'graphql': [ 'prettier' ],
-      \ }
-let g:ale_lint_on_text_changed = 0
-let g:ale_fix_on_save = 1
-'''
+repo = 'mattn/vim-goimports'
+on_ft = 'go'
