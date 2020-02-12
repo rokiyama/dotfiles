@@ -25,9 +25,10 @@ if status is-interactive
     set -x HOMEBREW_BREWFILE_ON_REQUEST 1
     set -x HOMEBREW_BREWFILE_APPSTORE 0
     set PATH (brew --prefix coreutils)"/libexec/gnubin" $PATH
+    myfunc_log "brew is ok"
 
     # nvm
-    if [ -e (brew --prefix)"/opt/nvm" ]
+    if functions -q nvm
       myfunc_log 'nvm is installed'
       set -x NVM_DIR "$HOME/.nvm"
       set -x nvm_prefix (brew --prefix)"/opt/nvm"
