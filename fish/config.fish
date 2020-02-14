@@ -19,7 +19,7 @@ if status is-interactive
   end
 
   # brew
-  if type brew > /dev/null ^&1
+  if type brew > /dev/null
     myfunc_log 'brew is installed'
     set -x HOMEBREW_BREWFILE $HOME/.dotfiles/Brewfile
     set -x HOMEBREW_BREWFILE_ON_REQUEST 1
@@ -41,7 +41,7 @@ if status is-interactive
   end
 
   # powerline
-  if type powerline > /dev/null ^&1
+  if type powerline > /dev/null
     myfunc_log 'powerline is installed, loading fish bindings...'
     set powerline_status_location (pip3 show powerline-status | grep 'Location: ' | cut -d' ' -f 2)
     set fish_function_path $fish_function_path "$powerline_status_location/powerline/bindings/fish"
@@ -60,7 +60,7 @@ if status is-interactive
   end
 
   # rbenv
-  if type rbenv > /dev/null ^&1
+  if type rbenv > /dev/null
     myfunc_log 'rbenv is installed'
     source (rbenv init - | psub)
   else
@@ -68,7 +68,7 @@ if status is-interactive
   end
 
   # go
-  if type go > /dev/null ^&1; and [ -d $HOME/go ]
+  if type go > /dev/null; and [ -d $HOME/go ]
     myfunc_log 'go is installed'
     set PATH $HOME/go/bin $PATH
   else
@@ -76,18 +76,18 @@ if status is-interactive
   end
 
   # jenv
-  if type jenv > /dev/null ^&1
+  if type jenv > /dev/null
     myfunc_log 'jenv is installed'
     source (brew --prefix)/opt/jenv/libexec/fish/export.fish
     source (brew --prefix)/opt/jenv/libexec/fish/jenv.fish
   end
 
   # fzf
-  if type fzf > /dev/null ^&1
+  if type fzf > /dev/null
     myfunc_log 'fzf is installed'
 
     # ghq
-    if type ghq > /dev/null ^&1
+    if type ghq > /dev/null
       myfunc_log 'ghq is installed'
       function g
         ghq list | eval (__fzfcmd) --tiebreak=index --toggle-sort=ctrl-r $FZF_DEFAULT_OPTS $FZF_REVERSE_ISEARCH_OPTS -q '(commandline)' | read -l result _
@@ -98,7 +98,7 @@ if status is-interactive
     end
 
     # z
-    if type z > /dev/null ^&1
+    if type z > /dev/null
       myfunc_log 'z is installed'
       function j
         # TODO: スペースのあるパスで正しく動作しない
@@ -138,7 +138,7 @@ if status is-interactive
   alias k='kubectl'
 
   # nvim
-  if type nvim > /dev/null ^&1
+  if type nvim > /dev/null
     myfunc_log 'nvim is installed'
     alias vimdiff='nvim -d'
   else
