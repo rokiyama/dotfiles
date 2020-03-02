@@ -157,7 +157,8 @@ if status is-interactive
   end
 
   function list-outdated-packages
-    brew update; and brew outdated
+    brew update && brew outdated
+    brew cask outdated
     gem outdated
     npm outdated -g
     pip-review
@@ -165,8 +166,9 @@ if status is-interactive
 
   function upgrade-packages
     brew update; and brew upgrade
+    brew cask upgrade
     gem update
-    yarn global upgrade
+    npm update -g
     pip-review --auto
     fisher self-update
     fisher
