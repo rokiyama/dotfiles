@@ -38,3 +38,5 @@ ln -s -f $dotfiles_dir/yamllint/config                          $HOME/.config/ya
 [ -d /usr/local/opt/alacritty/Applications/Alacritty.app ] && \
   [ ! -d /Applications/Alacritty.app ] && \
   ln -s -f /usr/local/opt/alacritty/Applications/Alacritty.app /Applications/Alacritty.app
+
+return 0
