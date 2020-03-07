@@ -38,7 +38,6 @@ brew install \
   mas \
   msgpack \
   neovim \
-  nvm \
   oniguruma \
   openssl \
   pcre2 \
@@ -57,17 +56,21 @@ brew install \
   wakeonlan \
   xz
 
+brew install yarn --ignore-dependencies
+
 brew tap homebrew/cask
 brew tap homebrew/cask-fonts
 
 brew cask install \
   alacritty \
-  google-chrome \
   discord \
   docker \
   font-fira-mono-for-powerline \
   google-backup-and-sync \
+  google-chrome \
   karabiner-elements \
+  kindle \
+  synergy \
   visual-studio-code
 
 # python
