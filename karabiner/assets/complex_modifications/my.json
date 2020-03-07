@@ -1,5 +1,5 @@
 {
-  "title": "Change fn + hjkl to arrow keys",
+  "title": "#My rules",
   "rules": [
     {
       "description": "Change fn + hjkl to arrow keys",
@@ -114,6 +114,71 @@
             "modifiers": { "mandatory": [ "control" ], "optional": [] }
           },
           "to": [ { "key_code": "escape" } ]
+        }
+      ]
+    },
+    {
+      "description": "右コマンドキーを単体で押したときに、かなキーを送信、左コマンドキーを単体で押したときに、英数キーを送信する。",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "left_command",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "parameters": {
+            "basic.to_if_held_down_threshold_milliseconds": 100
+          },
+          "to": [
+            {
+              "key_code": "left_command",
+              "lazy": true
+            }
+          ],
+          "to_if_held_down": [
+            {
+              "key_code": "left_command"
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "japanese_eisuu"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_command",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "parameters": {
+            "basic.to_if_held_down_threshold_milliseconds": 100
+          },
+          "to": [
+            {
+              "key_code": "right_command",
+              "lazy": true
+            }
+          ],
+          "to_if_held_down": [
+            {
+              "key_code": "right_command"
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "japanese_kana"
+            }
+          ]
         }
       ]
     }

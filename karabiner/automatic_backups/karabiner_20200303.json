@@ -2337,11 +2337,11 @@
                         ]
                     },
                     {
-                        "description": "右コマンドキーを単体で押したときに、かなキーを送信、左コマンドキーを単体で押したときに、英数キーを送信する。",
+                        "description": "右コマンドキーを単体で押したときに、かなキーを送信、左コントロールキーを単体で押したときに、英数キーを送信する。 (rev 2)",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "left_command",
+                                    "key_code": "left_control",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -2353,7 +2353,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_command",
+                                        "key_code": "left_control",
                                         "lazy": true
                                     }
                                 ],
@@ -2364,7 +2364,7 @@
                                 ],
                                 "to_if_held_down": [
                                     {
-                                        "key_code": "left_command"
+                                        "key_code": "left_control"
                                     }
                                 ],
                                 "type": "basic"
