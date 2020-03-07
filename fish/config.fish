@@ -31,7 +31,7 @@ if status is-interactive
     if functions -q nvm
       myfunc_log 'nvm is installed'
       set -x NVM_DIR "$HOME/.nvm"
-      set -x nvm_prefix (brew --prefix)"/opt/nvm"
+      set -x nvm_prefix "$HOME/.nvm"
       nvm use default
     else
       myfunc_err 'nvm is not installed.'
