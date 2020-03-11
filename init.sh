@@ -70,6 +70,7 @@ brew cask install \
   google-chrome \
   karabiner-elements \
   kindle \
+  gimp \
   synergy \
   visual-studio-code
 
