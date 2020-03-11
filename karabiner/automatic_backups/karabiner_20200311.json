@@ -2662,14 +2662,6 @@
                     "to": {
                         "key_code": "left_control"
                     }
-                },
-                {
-                    "from": {
-                        "key_code": "left_control"
-                    },
-                    "to": {
-                        "key_code": "left_option"
-                    }
                 }
             ],
             "virtual_hid_keyboard": {
