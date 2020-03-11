@@ -2670,6 +2670,14 @@
                     "to": {
                         "key_code": "left_option"
                     }
+                },
+                {
+                    "from": {
+                        "key_code": "right_option"
+                    },
+                    "to": {
+                        "key_code": "fn"
+                    }
                 }
             ],
             "virtual_hid_keyboard": {
