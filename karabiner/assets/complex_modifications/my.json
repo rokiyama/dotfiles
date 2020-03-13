@@ -181,6 +181,32 @@
           ]
         }
       ]
+    },
+    {
+      "description": "英数キーを他のキーと組み合わせて押したときに、コマンドキーを送信する。",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "japanese_eisuu",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_command"
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "japanese_eisuu"
+            }
+          ],
+          "type": "basic"
+        }
+      ]
     }
   ]
 }
