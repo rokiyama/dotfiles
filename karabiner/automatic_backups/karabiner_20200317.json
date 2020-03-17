@@ -829,7 +829,7 @@
             "parameters": {
                 "delay_milliseconds_before_open_device": 1000
             },
-            "selected": false,
+            "selected": true,
             "simple_modifications": [
                 {
                     "from": {
@@ -2371,7 +2371,7 @@
                         ]
                     },
                     {
-                        "description": "左コマンドキーを単体で押したときに、英数キーを送信する。",
+                        "description": "右コマンドキーを単体で押したときに、かなキーを送信、左コマンドキーを単体で押したときに、英数キーを送信する。",
                         "manipulators": [
                             {
                                 "from": {
@@ -2399,6 +2399,36 @@
                                 "to_if_held_down": [
                                     {
                                         "key_code": "left_command"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "right_command",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "parameters": {
+                                    "basic.to_if_held_down_threshold_milliseconds": 100
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_command",
+                                        "lazy": true
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "japanese_kana"
+                                    }
+                                ],
+                                "to_if_held_down": [
+                                    {
+                                        "key_code": "right_command"
                                     }
                                 ],
                                 "type": "basic"
@@ -2581,7 +2611,7 @@
             "parameters": {
                 "delay_milliseconds_before_open_device": 1000
             },
-            "selected": true,
+            "selected": false,
             "simple_modifications": [
                 {
                     "from": {
@@ -2605,14 +2635,6 @@
                     },
                     "to": {
                         "key_code": "fn"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "right_command"
-                    },
-                    "to": {
-                        "key_code": "japanese_kana"
                     }
                 }
             ],
