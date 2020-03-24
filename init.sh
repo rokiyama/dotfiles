@@ -53,6 +53,7 @@ brew install \
   trash \
   unar \
   unibilium \
+  watch \
   wakeonlan \
   xz
 
