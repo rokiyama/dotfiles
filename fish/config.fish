@@ -2,11 +2,11 @@ set DOTFILES_DIR $HOME/.dotfiles
 set SUBMODULES $DOTFILES_DIR/submodules
 
 function myfunc_log
-  echo -e "\e[0;32m"(date '+%Y/%m/%d %H:%M:%S.%3N')" $argv\e[m"
+  echo -e "\e[0;32m"(date '+%Y/%m/%d %H:%M:%S.%N')" $argv\e[m"
 end
 
 function myfunc_err
-  echo -e "\e[0;31m"(date '+%Y/%m/%d %H:%M:%S.%3N')" $argv\e[m"
+  echo -e "\e[0;31m"(date '+%Y/%m/%d %H:%M:%S.%N')" $argv\e[m"
 end
 
 if status is-interactive
@@ -46,7 +46,6 @@ if status is-interactive
     set powerline_status_location (pip3 show powerline-status | grep 'Location: ' | cut -d' ' -f 2)
     set fish_function_path $fish_function_path "$powerline_status_location/powerline/bindings/fish"
     powerline-setup
-    powerline-daemon -q
 
     # powerline for tmux
     if [ -n "$TMUX" ]
@@ -54,6 +53,7 @@ if status is-interactive
       tmux source "$powerline_status_location/powerline/bindings/tmux/powerline.conf"
     else
       myfunc_log 'not in tmux'
+      powerline-daemon -q
     end
   else
     myfunc_err 'powerline is not installed.'
