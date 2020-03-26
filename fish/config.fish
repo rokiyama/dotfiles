@@ -91,7 +91,7 @@ if status is-interactive
       myfunc_log 'ghq is installed'
       function g
         ghq list | eval (__fzfcmd) --tiebreak=index --toggle-sort=ctrl-r $FZF_DEFAULT_OPTS $FZF_REVERSE_ISEARCH_OPTS -q '(commandline)' | read -l result _
-        and commandline -- "cd '"(ghq root)"/$result'"
+        and cd (ghq root)"/$result"
       end
     else
       myfunc_err 'ghq is not installed.'
@@ -103,7 +103,7 @@ if status is-interactive
       function j
         # TODO: スペースのあるパスで正しく動作しない
         z --list | eval (__fzfcmd) --tiebreak=index --toggle-sort=ctrl-r $FZF_DEFAULT_OPTS $FZF_REVERSE_ISEARCH_OPTS -q '(commandline)' | read -l _ result _
-        and commandline -- "cd '$result'"
+        and cd "$result"
       end
     else
       myfunc_err 'z is not installed.'
