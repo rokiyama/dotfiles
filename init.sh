@@ -53,8 +53,8 @@ brew install \
   trash \
   unar \
   unibilium \
-  watch \
   wakeonlan \
+  watch \
   xz
 
 brew install yarn --ignore-dependencies
@@ -67,11 +67,12 @@ brew cask install \
   discord \
   docker \
   font-fira-mono-for-powerline \
+  gimp \
   google-backup-and-sync \
   google-chrome \
   karabiner-elements \
   kindle \
-  gimp \
+  lens \
   synergy \
   visual-studio-code
 
