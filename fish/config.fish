@@ -82,35 +82,7 @@ if status is-interactive
     source (brew --prefix)/opt/jenv/libexec/fish/jenv.fish
   end
 
-  # fzf
-  if type fzf > /dev/null
-    myfunc_log 'fzf is installed'
-
-    # ghq
-    if type ghq > /dev/null
-      myfunc_log 'ghq is installed'
-      function g
-        ghq list | eval (__fzfcmd) --tiebreak=index --toggle-sort=ctrl-r $FZF_DEFAULT_OPTS $FZF_REVERSE_ISEARCH_OPTS -q '(commandline)' | read -l result _
-        and cd (ghq root)"/$result"
-      end
-    else
-      myfunc_err 'ghq is not installed.'
-    end
-
-    # z
-    if type z > /dev/null
-      myfunc_log 'z is installed'
-      function j
-        # TODO: スペースのあるパスで正しく動作しない
-        z --list | eval (__fzfcmd) --tiebreak=index --toggle-sort=ctrl-r $FZF_DEFAULT_OPTS $FZF_REVERSE_ISEARCH_OPTS -q '(commandline)' | read -l _ result _
-        and cd "$result"
-      end
-    else
-      myfunc_err 'z is not installed.'
-    end
-  else
-    myfunc_err 'fzf is not installed.'
-  end
+  source $DOTFILES_DIR/fish/fzf.fish
 
   # dircolors
   if [ -d $SUBMODULES/dircolors-solarized ]
