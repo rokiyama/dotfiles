@@ -10,7 +10,7 @@ function load_fzf
   set -a FZF_DEFAULT_OPTS "--query=(commandline)"
 
   # git
-  function git_branch_switch
+  function git_switch_branch
     git branch -v $argv | eval (__fzfcmd) $FZF_DEFAULT_OPTS | sed 's/^\*//' | read -l result _
     if [ -z $result ]
       return
@@ -24,15 +24,7 @@ function load_fzf
     end
   end
 
-  function gbs
-    git_branch_switch
-  end
-
-  function gbsa
-    git_branch_switch --all
-  end
-
-  function gbdel
+  function git_delete_branch
     git branch -v | eval (__fzfcmd) $FZF_DEFAULT_OPTS | sed 's/^\*//' | read -l result _ && commandline "git b -d $result"
   end
 

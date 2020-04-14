@@ -105,6 +105,9 @@ if status is-interactive
   alias tm='tmux attach; or tmux'
 
   alias gst='git status -s -b; echo "[user]"; git config --local -l | grep user; or git config --global -l | grep user; or printf unspecified'
+  alias gbs='git_switch_branch'
+  alias gbsa='git_switch_branch --all'
+  alias gbd='git_delete_branch'
 
   alias cmpo='docker-compose'
   alias k='kubectl'
