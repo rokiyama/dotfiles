@@ -143,4 +143,5 @@ if status is-interactive
 
   abbr cmpo docker-compose
   abbr k kubectl
+  abbr dpsa docker ps -a
 end
