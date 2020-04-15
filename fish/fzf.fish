@@ -10,7 +10,7 @@ function load_fzf
   set -a FZF_DEFAULT_OPTS "--query=(commandline)"
 
   # git
-  function git_switch_branch
+  function fzf_git_switch_branch
     git branch -v $argv | eval (__fzfcmd) $FZF_DEFAULT_OPTS | sed 's/^\*//' | read -l result _
     if [ -z $result ]
       return
@@ -24,16 +24,16 @@ function load_fzf
     end
   end
 
-  function git_delete_branch
+  function fzf_git_delete_branch
     git branch -v | eval (__fzfcmd) $FZF_DEFAULT_OPTS | sed 's/^\*//' | read -l result _ && commandline "git b -d $result"
   end
 
   # ghq
   if type ghq > /dev/null
     myfunc_log 'ghq is installed'
-    function g
+    function fzf_ghq_cd
       ghq list | eval (__fzfcmd) $FZF_DEFAULT_OPTS | read -l result && cd (ghq root)"/$result"
-  end
+    end
   else
     myfunc_err 'ghq is not installed.'
   end
@@ -41,7 +41,7 @@ function load_fzf
   # z
   if type z > /dev/null
     myfunc_log 'z is installed'
-    function j
+    function fzf_z_jump
       # TODO: スペースのあるパスで正しく動作しない
       z --list | eval (__fzfcmd) $FZF_DEFAULT_OPTS | read -l _ result _ && cd "$result"
     end

@@ -92,26 +92,6 @@ if status is-interactive
     myfunc_err 'dircolors-solarized is not installed.'
   end
 
-  # aliases
-  alias ls='ls --color=auto'
-  alias t='ls -lhtr'
-  alias l='ls -lhav'
-  alias a='ls -av'
-  alias f=ls
-  alias d=cd
-
-  alias grep='grep --color=auto'
-
-  alias tm='tmux attach; or tmux'
-
-  alias gst='git status -s -b; echo "[user]"; git config --local -l | grep user; or git config --global -l | grep user; or printf unspecified'
-  alias gbs='git_switch_branch'
-  alias gbsa='git_switch_branch --all'
-  alias gbd='git_delete_branch'
-
-  alias cmpo='docker-compose'
-  alias k='kubectl'
-
   # nvim
   if type nvim > /dev/null
     myfunc_log 'nvim is installed'
@@ -149,7 +129,18 @@ if status is-interactive
     fisher
   end
 
-  function jqe
-    echo $argv[1] | jq $argv[2]
-  end
+  # aliases
+  abbr l ls -lhav
+  abbr d cd
+
+  abbr tm tmux attach || tmux
+
+  abbr gbs fzf_git_switch_branch
+  abbr gbsa fzf_git_switch_branch --all
+  abbr gbd fzf_git_delete_branch
+  abbr gq fzf_ghq_cd
+  abbr j fzf_z_jump
+
+  abbr cmpo docker-compose
+  abbr k kubectl
 end
