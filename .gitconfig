@@ -19,6 +19,13 @@
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
   required = true
+[merge]
+  tool = nvimdiff
+[mergetool]
+  prompt = true
+  keepBackup = false
+[mergetool "nvimdiff"]
+  cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [alias]
   co  = checkout
   b   = branch -v
