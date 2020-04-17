@@ -18,9 +18,9 @@ function load_fzf
     if string match 'remotes/*' $result
       set -l branch_name (string replace -r '^remotes/' '' $result)
       set -l local_branch_name (string replace -r '^remotes/[[:alnum:]]*/?' '' $result)
-      git switch -c $local_branch_name $branch_name
+      commandline "git switch -c $local_branch_name $branch_name"
     else
-      git switch $result
+      commandline "git switch $result"
     end
   end
 
