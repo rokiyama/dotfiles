@@ -141,6 +141,7 @@ if status is-interactive
   abbr gbd fzf_git_delete_branch
   abbr gq fzf_ghq_cd
   abbr j fzf_z_jump
+  abbr kga fzf_kubectl_get_all
 
   abbr cmpo docker-compose
   abbr k kubectl

@@ -48,6 +48,20 @@ function load_fzf
   else
     myfunc_err 'z is not installed.'
   end
+
+  # kubectl
+  if type kubectl > /dev/null
+    myfunc_log 'kubectl is installed'
+    function fzf_kubectl_get_all
+      set -l target $argv[1]
+      if [ -z $target ]
+        set target "pod"
+      end
+      kubectl get $target -A | eval (__fzfcmd) $FZF_DEFAULT_OPTS --header-lines=1 | read -l ns pod _ && commandline "kubectl get pod -n $ns $pod"
+    end
+  else
+    myfunc_err 'kubectl is not installed.'
+  end
 end
 
 load_fzf
