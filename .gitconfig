@@ -22,7 +22,7 @@
 [merge]
   tool = nvimdiff
 [mergetool]
-  prompt = true
+  prompt = false
   keepBackup = false
 [mergetool "nvimdiff"]
   cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
