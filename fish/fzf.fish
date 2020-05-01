@@ -11,7 +11,7 @@ function load_fzf
 
   # git
   function fzf_git_switch_branch
-    git branch -v $argv | eval (__fzfcmd) $FZF_DEFAULT_OPTS | sed 's/^\*//' | read -l result _
+    git branch -v $argv | fzf-tmux $FZF_DEFAULT_OPTS | sed 's/^\*//' | read -l result _
     if [ -z $result ]
       return
     end
@@ -25,14 +25,14 @@ function load_fzf
   end
 
   function fzf_git_delete_branch
-    git branch -v | eval (__fzfcmd) $FZF_DEFAULT_OPTS | sed 's/^\*//' | read -l result _ && commandline "git b -d $result"
+    git branch -v | fzf-tmux $FZF_DEFAULT_OPTS | sed 's/^\*//' | read -l result _ && commandline "git b -d $result"
   end
 
   # ghq
   if type ghq > /dev/null
     myfunc_log 'ghq is installed'
     function fzf_ghq_cd
-      ghq list | eval (__fzfcmd) $FZF_DEFAULT_OPTS | read -l result && cd (ghq root)"/$result"
+      ghq list | fzf-tmux $FZF_DEFAULT_OPTS | read -l result && cd (ghq root)"/$result"
     end
   else
     myfunc_err 'ghq is not installed.'
@@ -43,7 +43,7 @@ function load_fzf
     myfunc_log 'z is installed'
     function fzf_z_jump
       # TODO: スペースのあるパスで正しく動作しない
-      z --list | eval (__fzfcmd) $FZF_DEFAULT_OPTS | read -l _ result _ && cd "$result"
+      z --list | fzf-tmux $FZF_DEFAULT_OPTS | read -l _ result _ && cd "$result"
     end
   else
     myfunc_err 'z is not installed.'
@@ -57,7 +57,7 @@ function load_fzf
       if [ -z $target ]
         set target "pod"
       end
-      kubectl get $target -A | eval (__fzfcmd) $FZF_DEFAULT_OPTS --header-lines=1 | read -l ns pod _ && commandline "kubectl get pod -n $ns $pod"
+      kubectl get $target -A | fzf-tmux $FZF_DEFAULT_OPTS --header-lines=1 | read -l ns pod _ && commandline "kubectl get pod -n $ns $pod"
     end
   else
     myfunc_err 'kubectl is not installed.'

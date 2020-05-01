@@ -24,7 +24,7 @@ if status is-interactive
     set -x HOMEBREW_BREWFILE $HOME/.dotfiles/Brewfile
     set -x HOMEBREW_BREWFILE_ON_REQUEST 1
     set -x HOMEBREW_BREWFILE_APPSTORE 0
-    set PATH (brew --prefix coreutils)"/libexec/gnubin" $PATH
+    #set PATH (brew --prefix coreutils)"/libexec/gnubin" $PATH
     myfunc_log "brew is ok"
 
     # nvm
@@ -87,7 +87,7 @@ if status is-interactive
   # dircolors
   if [ -d $SUBMODULES/dircolors-solarized ]
     myfunc_log 'dircolors-solarized is installed'
-    eval (dircolors -c $SUBMODULES/dircolors-solarized/dircolors.ansi-universal)
+    eval (gdircolors -c $SUBMODULES/dircolors-solarized/dircolors.ansi-universal)
   else
     myfunc_err 'dircolors-solarized is not installed.'
   end
