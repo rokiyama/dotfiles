@@ -122,17 +122,17 @@ let mapleader = "\<Space>"
 nnoremap <silent> <M-Space> :simalt ~<CR>
 
 " emacs-like keybind {{{
-noremap! <C-a>  <Home>
-noremap! <C-e>  <End>
-noremap! <C-b>  <Left>
-noremap! <C-f>  <Right>
-noremap! <C-d>  <Del>
-noremap! <M-b>  <C-Left>
-noremap! <M-f>  <C-Right>
-noremap! <M-d>  <Del>
-noremap! <C-g>  <Esc>
-cnoremap <C-p>  <Up>
-cnoremap <C-n>  <Down>
+" noremap! <C-a>  <Home>
+" noremap! <C-e>  <End>
+" noremap! <C-b>  <Left>
+" noremap! <C-f>  <Right>
+" noremap! <C-d>  <Del>
+" noremap! <M-b>  <C-Left>
+" noremap! <M-f>  <C-Right>
+" noremap! <M-d>  <Del>
+" noremap! <C-g>  <Esc>
+" cnoremap <C-p>  <Up>
+" cnoremap <C-n>  <Down>
 " }}}
 
 " edit {{{
@@ -168,11 +168,6 @@ nnoremap <silent> [tabwin]D     :<C-u>bd!<CR>
 " search {{{
 nnoremap <leader>/ /\v
 nnoremap <silent> <C-n> :nohlsearch<CR>
-" }}}
-
-" edit {{{
-inoremap <silent> jj <ESC>
-inoremap <silent> っj <ESC>
 " }}}
 
 " }}}
