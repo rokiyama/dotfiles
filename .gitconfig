@@ -47,3 +47,5 @@
   ps  = push
   r   = remote
   ra  = remote -v
+[pull]
+	ff = only
