@@ -57,7 +57,7 @@ function load_fzf
       if [ -z $target ]
         set target "pod"
       end
-      kubectl get $target -A | fzf-tmux $FZF_DEFAULT_OPTS --header-lines=1 | read -l ns pod _ && commandline "kubectl get pod -n $ns $pod"
+      kubectl get $target -A | fzf-tmux $FZF_DEFAULT_OPTS --header-lines=1 | read -l ns name _ && commandline "kubectl get $target -n $ns $name"
     end
   else
     myfunc_err 'kubectl is not installed.'

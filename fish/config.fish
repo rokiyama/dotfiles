@@ -43,7 +43,7 @@ if status is-interactive
   # powerline
   if type powerline > /dev/null
     myfunc_log 'powerline is installed, loading fish bindings...'
-    set powerline_status_location (pip3 show powerline-status | grep 'Location: ' | cut -d' ' -f 2)
+    set powerline_status_location (pip3.8 show powerline-status | grep 'Location: ' | cut -d' ' -f 2)
     set fish_function_path $fish_function_path "$powerline_status_location/powerline/bindings/fish"
     powerline-setup
 
@@ -122,6 +122,7 @@ if status is-interactive
   function upgrade-packages
     brew update; and brew upgrade
     brew cask upgrade
+    type gem
     gem update
     npm update -g
     pip-review --auto
