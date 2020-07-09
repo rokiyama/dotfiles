@@ -78,6 +78,6 @@ brew cask install \
   visual-studio-code
 
 # python
-type pip3 > /dev/null 2>&1 && pip3 install pip-review neovim pynvim powerline-status powerline-gitstatus Send2Trash
+type pip3.8 > /dev/null 2>&1 && pip3.8 install pip-review neovim pynvim powerline-status powerline-gitstatus Send2Trash
 
 [ $OSTYPE != "msys" ] && source ./linktohome.sh
