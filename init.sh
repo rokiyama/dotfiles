@@ -30,6 +30,7 @@ brew install \
   grpcurl \
   go \
   hadolint \
+  icu4c \
   jq \
   libevent \
   libtermkey \
@@ -58,7 +59,7 @@ brew install \
   watch \
   xz
 
-brew install yarn --ignore-dependencies
+#brew install yarn --ignore-dependencies
 
 brew tap homebrew/cask
 brew tap homebrew/cask-fonts
