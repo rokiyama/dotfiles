@@ -21,14 +21,15 @@ brew install \
   awscli \
   bat \
   coreutils \
+  findutils \
   fish \
   fzf \
   gdbm \
   gettext \
   ghq \
   git \
-  grpcurl \
   go \
+  grpcurl \
   hadolint \
   icu4c \
   jq \
