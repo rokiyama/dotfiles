@@ -69,6 +69,7 @@ brew cask install \
   alacritty \
   discord \
   docker \
+  drawio \
   font-fira-mono-for-powerline \
   gimp \
   google-backup-and-sync \
