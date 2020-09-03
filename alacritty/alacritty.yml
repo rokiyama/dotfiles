@@ -649,3 +649,7 @@ key_bindings:
   # - { key: Key6,      mods: Alt|Shift, chars: "\x1b^"                       } # Alt + ^
   # - { key: Backslash, mods: Alt,       chars: "\x1b\\"                      } # Alt + \
   # - { key: Backslash, mods: Alt|Shift, chars: "\x1b|"                       } # Alt + |
+
+  # https://github.com/alacritty/alacritty/issues/607#issuecomment-329083060
+  - { key: N,        mods: Command, command: { program: "open", args: ["-n", "/Applications/Alacritty.app"] } }
+
