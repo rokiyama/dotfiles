@@ -1,0 +1,48 @@
+# vim: set ts=2 sw=2
+include "read-keyboard-define.nodoka"
+
+keymap Global
+
+  # F1キーで、のどかのメニューを開く
+  key F1 = &SendPostMessage("PostTray",,"のどか", 0x0205, 0, 0)
+
+  # Custom modifier
+  mod M0 += !CapsLock
+
+  # Custom modifier combinations
+  key M0-*h                 = *Left
+  key M0-*j                 = *Down
+  key M0-*k                 = *Up
+  key M0-*l                 = *Right
+  key M0-*n                 = *BS
+  key M0-*y                 = *Home
+  key M0-*u                 = *PageDown
+  key M0-*i                 = *PageUp
+  key M0-*o                 = *End
+  #key M0-*p                 = *PrintScreen
+  #key M0-*Atmark            = *ScrollLock
+  #key M0-*LeftSquareBracket = *Pause
+  #key M0-*z                 = *Apps
+  #key M0-*Semicolon         = *Insert
+  #key M0-*Colon             = *Delete
+  key M0-*BS                = *Delete
+  key M0-*_1                = *F1
+  key M0-*_2                = *F2
+  key M0-*_3                = *F3
+  key M0-*_4                = *F4
+  key M0-*_5                = *F5
+  key M0-*_6                = *F6
+  key M0-*_7                = *F7
+  key M0-*_8                = *F8
+  key M0-*_9                = *F9
+  key M0-*_0                = *F10
+  key M0-*Hyphen            = *F11
+  key M0-*EqualsSign        = *F12
+
+  mod menu -= LeftAlt
+  mod alt += !!LeftAlt
+  key *A-LeftAlt = &SetImeStatus(off)	
+
+  mod menu -= RightAlt
+  mod alt += !!RightAlt
+  key *A-RightAlt = &SetImeStatus(on)
