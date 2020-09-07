@@ -3374,14 +3374,6 @@
             "simple_modifications": [
                 {
                     "from": {
-                        "key_code": "caps_lock"
-                    },
-                    "to": {
-                        "key_code": "left_control"
-                    }
-                },
-                {
-                    "from": {
                         "key_code": "delete_forward"
                     },
                     "to": {
@@ -3398,14 +3390,6 @@
                 },
                 {
                     "from": {
-                        "key_code": "left_control"
-                    },
-                    "to": {
-                        "key_code": "fn"
-                    }
-                },
-                {
-                    "from": {
                         "key_code": "left_option"
                     },
                     "to": {
@@ -3417,7 +3401,15 @@
                         "key_code": "right_option"
                     },
                     "to": {
-                        "key_code": "japanese_kana"
+                        "key_code": "right_command"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "caps_lock"
+                    },
+                    "to": {
+                        "key_code": "fn"
                     }
                 }
             ],
