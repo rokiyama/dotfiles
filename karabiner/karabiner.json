@@ -2837,49 +2837,6 @@
                         ]
                     },
                     {
-                        "description": "Exchange single and double quote",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "quote",
-                                    "modifiers": {
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "quote",
-                                        "modifiers": [
-                                            "left_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "quote",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "shift"
-                                        ],
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "quote"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Quit application by holding command-q",
                         "manipulators": [
                             {
@@ -3374,6 +3331,14 @@
             "simple_modifications": [
                 {
                     "from": {
+                        "key_code": "caps_lock"
+                    },
+                    "to": {
+                        "key_code": "fn"
+                    }
+                },
+                {
+                    "from": {
                         "key_code": "delete_forward"
                     },
                     "to": {
@@ -3402,14 +3367,6 @@
                     },
                     "to": {
                         "key_code": "right_command"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "caps_lock"
-                    },
-                    "to": {
-                        "key_code": "fn"
                     }
                 }
             ],
