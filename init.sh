@@ -60,8 +60,6 @@ brew install \
   watch \
   xz
 
-#brew install yarn --ignore-dependencies
-
 brew tap homebrew/cask
 brew tap homebrew/cask-fonts
 
