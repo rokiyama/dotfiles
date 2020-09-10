@@ -120,10 +120,12 @@ highlight Visual term=reverse cterm=reverse guibg=Grey
 let mapleader = "\<Space>"
 
 nnoremap <silent> <M-Space> :simalt ~<CR>
-nnoremap : ;
-nnoremap ; :
-vnoremap : ;
-vnoremap ; :
+
+" exchange colon/semicolon
+" nnoremap : ;
+" nnoremap ; :
+" vnoremap : ;
+" vnoremap ; :
 
 " emacs-like keybind {{{
 " noremap! <C-a>  <Home>
