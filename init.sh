@@ -68,6 +68,7 @@ brew cask install \
   discord \
   docker \
   drawio \
+  evernote \
   font-fira-mono-for-powerline \
   gimp \
   google-backup-and-sync \
@@ -77,6 +78,9 @@ brew cask install \
   lens \
   synergy \
   visual-studio-code
+
+# mas
+#mas install 497799835 # Xcode
 
 # python
 type pip3.8 > /dev/null 2>&1 && pip3.8 install pip-review neovim pynvim powerline-status powerline-gitstatus Send2Trash
