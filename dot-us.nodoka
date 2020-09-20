@@ -6,8 +6,13 @@ keymap Global
   # F1キーで、のどかのメニューを開く
   key F1 = &SendPostMessage("PostTray",,"のどか", 0x0205, 0, 0)
 
+  mod control += CapsLock
+  key *CapsLock = *LeftControl
+  mod control -= LeftControl
+  key *LeftControl = *CapsLock
+
   # Custom modifier
-  mod M0 += !CapsLock
+  mod M0 += !LeftControl
 
   # Custom modifier combinations
   key M0-*h                 = *Left
@@ -39,10 +44,16 @@ keymap Global
   key M0-*Hyphen            = *F11
   key M0-*EqualsSign        = *F12
 
-  mod menu -= LeftAlt
-  mod alt += !!LeftAlt
-  key *A-LeftAlt = &SetImeStatus(off)	
+  mod alt -= LeftAlt
+  mod windows += LeftAlt
+  #mod alt += !!LeftAlt
+  key *LeftAlt = *LeftWindows	
 
-  mod menu -= RightAlt
-  mod alt += !!RightAlt
+  mod windows -= LeftWindows
+  mod alt += LeftWindows
+  mod alt += !!LeftWindows
+  key *LeftWindows = *LeftAlt
+  key *LeftWindows = &SetImeStatus(off)
+
+  mod alt -= RightAlt
   key *A-RightAlt = &SetImeStatus(on)
