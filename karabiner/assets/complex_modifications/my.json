@@ -118,7 +118,7 @@
       ]
     },
     {
-      "description": "右コマンドキーを単体で押したときに、かなキーを送信、左コマンドキーを単体で押したときに、英数キーを送信する。",
+      "description": "左コマンドキーを単体で押したときに、英数キーを送信する。右コマンドキーは常にかなキーを送信する。",
       "manipulators": [
         {
           "type": "basic",
@@ -160,51 +160,11 @@
               ]
             }
           },
-          "parameters": {
-            "basic.to_if_held_down_threshold_milliseconds": 100
-          },
           "to": [
-            {
-              "key_code": "right_command",
-              "lazy": true
-            }
-          ],
-          "to_if_held_down": [
-            {
-              "key_code": "right_command"
-            }
-          ],
-          "to_if_alone": [
             {
               "key_code": "japanese_kana"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "英数キーを他のキーと組み合わせて押したときに、コマンドキーを送信する。",
-      "manipulators": [
-        {
-          "from": {
-            "key_code": "japanese_eisuu",
-            "modifiers": {
-              "optional": [
-                "any"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "left_command"
-            }
-          ],
-          "to_if_alone": [
-            {
-              "key_code": "japanese_eisuu"
-            }
-          ],
-          "type": "basic"
         }
       ]
     }
