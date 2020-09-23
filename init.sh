@@ -65,6 +65,7 @@ brew tap homebrew/cask-fonts
 
 brew cask install \
   alacritty \
+  authy \
   discord \
   docker \
   drawio \
