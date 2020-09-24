@@ -21,3 +21,6 @@
     # set LC_ALL (mac)
     ln -s $HOME/.dotfiles/mac/setenv.LC_ALL.plist $HOME/Library/LaunchAgents/
     launchctl load $HOME/Library/LaunchAgents/setenv.LC_ALL.plist
+
+    # disable long press on us key for accents (mac)
+    defaults write -g ApplePressAndHoldEnabled -bool false
