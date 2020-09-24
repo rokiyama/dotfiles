@@ -120,8 +120,7 @@ if status is-interactive
   end
 
   function upgrade-packages
-    brew update; and brew upgrade
-    brew cask upgrade
+    brew update && brew upgrade && brew upgrade --cask
     type gem
     gem update
     npm update -g
