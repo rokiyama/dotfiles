@@ -33,6 +33,7 @@ brew install \
   hadolint \
   icu4c \
   jq \
+  kind \
   libevent \
   libtermkey \
   libuv \
