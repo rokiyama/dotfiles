@@ -52,6 +52,7 @@ brew install \
   ripgrep \
   ruby-build \
   sqlite \
+  svn \
   tmux \
   trash \
   unar \
@@ -69,7 +70,6 @@ if type fish 2>/dev/null; then
 fi
 
 brew tap homebrew/cask
-brew tap homebrew/cask-fonts
 
 brew cask install \
   alacritty \
@@ -78,7 +78,6 @@ brew cask install \
   docker \
   drawio \
   evernote \
-  font-fira-mono-for-powerline \
   gimp \
   google-backup-and-sync \
   google-chrome \
@@ -93,5 +92,9 @@ brew cask install \
 
 # python
 type pip3.8 > /dev/null 2>&1 && pip3.8 install pip-review neovim pynvim powerline-status powerline-gitstatus Send2Trash
+
+brew tap homebrew/cask-fonts
+brew cask install \
+  font-fira-mono-for-powerline
 
 [ $OSTYPE != "msys" ] && source ./linktohome.sh
