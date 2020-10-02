@@ -84,6 +84,7 @@ brew cask install \
   karabiner-elements \
   kindle \
   lens \
+  mattermost \
   synergy \
   visual-studio-code
 
