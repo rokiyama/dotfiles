@@ -1,10 +1,8 @@
 #!/bin/sh
 set -uex
 
-# prerequisites: xcode cli tools and homebrew are installed
 if !(type brew > /dev/null 2>&1); then
-  echo 'brew does not exist' 1>&2
-  exit 1
+  curl -fsSLo- https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash
 fi
 
 DOTFILES_DIR=~/.dotfiles
