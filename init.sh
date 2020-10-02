@@ -60,6 +60,14 @@ brew install \
   watch \
   xz
 
+if type fish 2>/dev/null; then
+  readonly FISH_PATH=$(which fish)
+  grep -x $FISH_PATH /etc/shells || sudo sh -c "echo $FISH_PATH >> /etc/shells"
+  if [ $SHELL != $(which fish) ]; then
+    chsh -s $FISH_PATH
+  fi
+fi
+
 brew tap homebrew/cask
 brew tap homebrew/cask-fonts
 
