@@ -19,8 +19,8 @@ ln -s -f $dotfiles_dir/.tmux.conf
 ln -s -f $dotfiles_dir/.vim
 
 [ -d $HOME/.config ]            || mkdir -p $HOME/.config
-[ -d $HOME/.config/nvim ]       || ln -s $dotfiles_dir/nvim                           $HOME/.config/nvim
-[ -d $HOME/.config/karabiner ]  || ln -s $dotfiles_dir/karabiner                      $HOME/.config/karabiner
+[ -d $HOME/.config/nvim ]       || ln -s -f $dotfiles_dir/nvim                           $HOME/.config/nvim
+[ -d $HOME/.config/karabiner ]  || ln -s -f $dotfiles_dir/karabiner                      $HOME/.config/karabiner
 
 [ -d $HOME/.config/alacritty ]                      || mkdir -p $HOME/.config/alacritty
 ln -s -f $dotfiles_dir/alacritty/alacritty.yml                  $HOME/.config/alacritty/alacritty.yml
@@ -34,9 +34,3 @@ ln -s -f $dotfiles_dir/powerline/config.json                    $HOME/.config/po
 
 [ -d $HOME/.config/yamllint ]                       || mkdir -p $HOME/.config/yamllint
 ln -s -f $dotfiles_dir/yamllint/config                          $HOME/.config/yamllint/config
-
-[ -d /usr/local/opt/alacritty/Applications/Alacritty.app ] && \
-  [ ! -d /Applications/Alacritty.app ] && \
-  ln -s -f /usr/local/opt/alacritty/Applications/Alacritty.app /Applications/Alacritty.app
-
-return 0
