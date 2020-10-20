@@ -135,6 +135,7 @@ if status is-interactive
 
   abbr tm 'tmux attach || tmux'
 
+  abbr h fzf_history
   abbr gb git b
   abbr gbs fzf_git_switch_branch
   abbr gbsa fzf_git_switch_branch --all

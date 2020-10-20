@@ -9,6 +9,10 @@ function load_fzf
   set -a FZF_DEFAULT_OPTS "--toggle-sort=ctrl-r"
   set -a FZF_DEFAULT_OPTS "--query=(commandline)"
 
+  function fzf_history
+    commandline (history | fzf)
+  end
+
   # git
   function fzf_git_switch_branch
     git branch -v $argv | fzf-tmux $FZF_DEFAULT_OPTS | sed 's/^\*//' | read -l result _
