@@ -92,7 +92,7 @@ brew cask install \
 #mas install 497799835 # Xcode
 
 # python
-type pip3.8 > /dev/null 2>&1 && pip3.8 install pip-review neovim pynvim powerline-status powerline-gitstatus Send2Trash
+type python3 > /dev/null 2>&1 && python3 -m pip install --user --upgrade pip-review pynvim powerline-status powerline-gitstatus Send2Trash
 
 brew tap homebrew/cask-fonts
 brew cask install \
