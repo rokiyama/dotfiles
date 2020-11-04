@@ -151,8 +151,8 @@ if status is-interactive
   abbr gba  git branch -av
   abbr ga   git add
   abbr gap  git add -p
-  abbr gc   git commit
-  abbr gca  git commit -a
+  abbr gc   git commit -v
+  abbr gca  git commit -va
   abbr gd   git diff
   abbr gdc  git diff --cached
   abbr gf   git fetch --prune
