@@ -29,7 +29,7 @@ function load_fzf
   end
 
   function fzf_git_delete_branch
-    git branch -v | fzf-tmux $FZF_DEFAULT_OPTS | sed 's/^\*//' | read -l result _ && commandline "git b -d $result"
+    git branch -v | fzf-tmux $FZF_DEFAULT_OPTS | sed 's/^\*//' | read -l result _ && commandline "git branch -d $result"
   end
 
   # ghq

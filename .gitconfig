@@ -27,25 +27,25 @@
 [mergetool "nvimdiff"]
   cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [alias]
-  co  = checkout
-  b   = branch -v
-  ba  = branch -avv
-  s   = status -s -b
-  a   = add
-  ap  = add -p
-  c   = commit -v
-  ca  = commit -va
-  d   = diff
-  dc  = diff --cached
-  f   = fetch
-  l   = log --graph --oneline --decorate
-  la  = log --graph --all --oneline --decorate
-  lg  = log --graph --decorate --format=fuller
-  lga = log --graph --all --decorate --format=fuller
-  lp  = log --graph --decorate -p
-  pl  = pull
-  ps  = push
-  r   = remote
-  ra  = remote -v
+  ; co  = checkout
+  ; b   = branch -v
+  ; ba  = branch -avv
+  ; s   = status -s -b
+  ; a   = add
+  ; ap  = add -p
+  ; c   = commit -v
+  ; ca  = commit -va
+  ; d   = diff
+  ; dc  = diff --cached
+  ; f   = fetch
+  ; l   = log --graph --oneline --decorate
+  ; la  = log --graph --all --oneline --decorate
+  ; lg  = log --graph --decorate --format=fuller
+  ; lga = log --graph --all --decorate --format=fuller
+  ; lp  = log --graph --decorate -p
+  ; pl  = pull
+  ; ps  = push
+  ; r   = remote
+  ; ra  = remote -v
 [pull]
   ff = only
