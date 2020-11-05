@@ -14,8 +14,7 @@ if status is-interactive
   if not functions -q fisher
     myfunc_log 'Installing fisher for the first time...'
     set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME $HOME/.config
-    curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
-    fish -c fisher
+    curl -sL git.io/fisher | source && fisher install jorgebucaran/fisher
   end
 
   # brew
@@ -43,7 +42,7 @@ if status is-interactive
   # powerline
   if type powerline > /dev/null
     myfunc_log 'powerline is installed, loading fish bindings...'
-    set powerline_status_location (pip3.8 show powerline-status | grep 'Location: ' | cut -d' ' -f 2)
+    set powerline_status_location (python3 -m pip show powerline-status | grep 'Location: ' | cut -d' ' -f 2)
     set fish_function_path $fish_function_path "$powerline_status_location/powerline/bindings/fish"
     powerline-setup
 
@@ -125,8 +124,7 @@ if status is-interactive
     gem update
     npm update -g
     pip-review --auto
-    fisher self-update
-    fisher
+    fisher update
   end
 
   # aliases
