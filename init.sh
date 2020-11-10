@@ -29,6 +29,7 @@ brew install \
   go \
   grpcurl \
   hadolint \
+  htop \
   icu4c \
   jq \
   kind \
@@ -83,6 +84,7 @@ brew cask install \
   google-cloud-sdk \
   karabiner-elements \
   kindle \
+  lastpass \
   lens \
   mattermost \
   synergy \
