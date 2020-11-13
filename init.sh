@@ -74,6 +74,7 @@ brew tap homebrew/cask
 brew cask install \
   alacritty \
   authy \
+  deepl \
   discord \
   docker \
   drawio \
