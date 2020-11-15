@@ -78,6 +78,7 @@ brew cask install \
   discord \
   docker \
   drawio \
+  dynalist \
   evernote \
   gimp \
   google-backup-and-sync \
@@ -89,6 +90,7 @@ brew cask install \
   lens \
   mattermost \
   synergy \
+  typora \
   visual-studio-code
 
 # mas
