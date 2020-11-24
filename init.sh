@@ -91,6 +91,7 @@ brew cask install \
   mattermost \
   synergy \
   typora \
+  qlmarkdown \
   visual-studio-code
 
 # mas
