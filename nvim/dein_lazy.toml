@@ -253,7 +253,3 @@ on_ft = 'graphql'
 [[plugins]]
 repo = 'mattn/vim-goimports'
 on_ft = 'go'
-
-[[plugins]]
-repo = 'elzr/vim-json'
-on_ft = 'json'
