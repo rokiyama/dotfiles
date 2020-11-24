@@ -73,6 +73,7 @@ brew tap homebrew/cask
 
 brew cask install \
   alacritty \
+  alfred \
   authy \
   deepl \
   discord \
