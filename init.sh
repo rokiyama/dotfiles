@@ -84,15 +84,14 @@ brew cask install \
   gimp \
   google-backup-and-sync \
   google-chrome \
-  google-cloud-sdk \
   karabiner-elements \
   kindle \
   lastpass \
   lens \
   mattermost \
+  qlmarkdown \
   synergy \
   typora \
-  qlmarkdown \
   visual-studio-code
 
 # mas
