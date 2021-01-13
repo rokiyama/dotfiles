@@ -76,6 +76,7 @@ brew cask install \
   alacritty \
   alfred \
   authy \
+  chrome-remote-desktop-host \
   deepl \
   discord \
   docker \
