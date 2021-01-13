@@ -26,6 +26,7 @@ brew install \
   gettext \
   ghq \
   git \
+  gnu-sed \
   go \
   grpcurl \
   hadolint \
