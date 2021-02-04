@@ -18,6 +18,7 @@ git submodule update
 brew install \
   awscli \
   bat \
+  bluetoothconnector \
   coreutils \
   findutils \
   fish \
