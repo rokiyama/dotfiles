@@ -11,6 +11,12 @@ keymap Global
   mod control -= LeftControl
   key *LeftControl = *CapsLock
 
+  key *SemiColon = *Enter
+  key Quote = S-Semicolon
+  key S-Quote = Semicolon
+  key Enter = S-Quote
+  key S-Enter = Quote
+
   # Custom modifier
   mod M0 += !LeftControl
 
