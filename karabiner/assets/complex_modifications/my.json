@@ -93,6 +93,14 @@
             "modifiers": { "mandatory": [ "fn" ], "optional": [ "any" ] }
           },
           "to": [ { "key_code": "insert" } ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "d",
+            "modifiers": { "mandatory": [ "fn" ], "optional": [ "any" ] }
+          },
+          "to": [ { "key_code": "delete_forward" } ]
         }
       ]
     },
