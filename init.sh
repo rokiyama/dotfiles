@@ -20,6 +20,8 @@ brew install \
   bat \
   bluetoothconnector \
   coreutils \
+  docker-completion \
+  docker-compose-completion \
   findutils \
   fish \
   fzf \
