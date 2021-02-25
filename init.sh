@@ -75,16 +75,16 @@ fi
 
 brew tap homebrew/cask
 
-brew cask install \
+brew install --cask \
   alacritty \
   alfred \
   authy \
+  brave-browser \
   chrome-remote-desktop-host \
   deepl \
   discord \
   docker \
   drawio \
-  dynalist \
   evernote \
   gimp \
   google-backup-and-sync \
@@ -97,7 +97,8 @@ brew cask install \
   qlmarkdown \
   synergy \
   typora \
-  visual-studio-code
+  visual-studio-code \
+  zoom
 
 # mas
 #mas install 497799835 # Xcode
@@ -106,7 +107,7 @@ brew cask install \
 type python3 > /dev/null 2>&1 && python3 -m pip install --user --upgrade pip-review pynvim powerline-status powerline-gitstatus Send2Trash
 
 brew tap homebrew/cask-fonts
-brew cask install \
+brew install --cask \
   font-fira-mono-for-powerline
 
 [ $OSTYPE != "msys" ] && source ./linktohome.sh
