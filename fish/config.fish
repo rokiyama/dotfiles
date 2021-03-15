@@ -2,11 +2,11 @@ set DOTFILES_DIR $HOME/.dotfiles
 set SUBMODULES $DOTFILES_DIR/submodules
 
 function myfunc_log
-  echo -e "\e[0;32m"(date '+%Y/%m/%d %H:%M:%S.%N')" $argv\e[m"
+  echo -e "\e[0;32m"(gdate '+%Y/%m/%d %H:%M:%S.%N' || date '+%Y/%m/%d %H:%M:%S')" $argv\e[m"
 end
 
 function myfunc_err
-  echo -e "\e[0;31m"(date '+%Y/%m/%d %H:%M:%S.%N')" $argv\e[m"
+  echo -e "\e[0;31m"(gdate '+%Y/%m/%d %H:%M:%S.%N' || date '+%Y/%m/%d %H:%M:%S')" $argv\e[m"
 end
 
 if status is-interactive
@@ -44,7 +44,7 @@ if status is-interactive
     myfunc_log 'powerline is installed, loading fish bindings...'
     set powerline_status_location (python3 -m pip show powerline-status | grep 'Location: ' | cut -d' ' -f 2)
     set fish_function_path $fish_function_path "$powerline_status_location/powerline/bindings/fish"
-    powerline-setup
+    # powerline-setup
 
     # powerline for tmux
     if [ -n "$TMUX" ]

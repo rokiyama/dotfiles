@@ -34,6 +34,7 @@ brew install \
   grpcurl \
   hadolint \
   htop \
+  hugo \
   icu4c \
   jq \
   kind \
@@ -79,6 +80,7 @@ brew install --cask \
   alacritty \
   alfred \
   authy \
+  bitwarden \
   brave-browser \
   chrome-remote-desktop-host \
   deepl \
@@ -91,9 +93,7 @@ brew install --cask \
   google-chrome \
   karabiner-elements \
   kindle \
-  lastpass \
   lens \
-  mattermost \
   qlmarkdown \
   synergy \
   typora \
@@ -108,6 +108,6 @@ type python3 > /dev/null 2>&1 && python3 -m pip install --user --upgrade pip-rev
 
 brew tap homebrew/cask-fonts
 brew install --cask \
-  font-fira-mono-for-powerline
+  font-meslo-for-powerline
 
 [ $OSTYPE != "msys" ] && source ./linktohome.sh
