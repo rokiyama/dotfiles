@@ -39,6 +39,11 @@ if status is-interactive
     myfunc_err 'brew is not installed.'
   end
 
+  # python
+  if type python3 > /dev/null
+    set PATH $HOME/Library/Python/3.9/bin $PATH
+  end
+
   # powerline
   if type powerline > /dev/null
     myfunc_log 'powerline is installed, loading fish bindings...'

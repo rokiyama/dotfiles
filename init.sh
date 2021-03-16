@@ -80,7 +80,6 @@ brew install --cask \
   alacritty \
   alfred \
   authy \
-  bitwarden \
   brave-browser \
   chrome-remote-desktop-host \
   deepl \
@@ -90,11 +89,9 @@ brew install --cask \
   evernote \
   gimp \
   google-backup-and-sync \
-  google-chrome \
   karabiner-elements \
   kindle \
   lens \
-  qlmarkdown \
   synergy \
   typora \
   visual-studio-code \
@@ -102,12 +99,13 @@ brew install --cask \
 
 # mas
 #mas install 497799835 # Xcode
+#mas install 1352778147 # Bitwarden
 
 # python
-type python3 > /dev/null 2>&1 && python3 -m pip install --user --upgrade pip-review pynvim powerline-status powerline-gitstatus Send2Trash
+type pip3 > /dev/null 2>&1 && pip3 install --user --upgrade pip-review pynvim powerline-status powerline-gitstatus Send2Trash
 
 brew tap homebrew/cask-fonts
 brew install --cask \
-  font-meslo-for-powerline
+  font-meslo-lg-nerd-font
 
 [ $OSTYPE != "msys" ] && source ./linktohome.sh
