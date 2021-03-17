@@ -80,7 +80,6 @@ brew install --cask \
   alacritty \
   alfred \
   authy \
-  brave-browser \
   chrome-remote-desktop-host \
   deepl \
   discord \
@@ -91,8 +90,6 @@ brew install --cask \
   google-backup-and-sync \
   karabiner-elements \
   kindle \
-  lens \
-  synergy \
   typora \
   visual-studio-code \
   zoom
