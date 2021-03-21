@@ -17,25 +17,23 @@ let s:deindir = '~/.cache/dein'
 if isdirectory(expand(s:deindir))
   let &runtimepath = &runtimepath . ',' . s:deindir . '/repos/github.com/Shougo/dein.vim'
 
-  if dein#load_state(s:deindir)
-    call dein#begin(s:deindir)
+  call dein#begin(s:deindir)
 
-    call dein#load_toml('~/.config/nvim/dein.toml')
-    call dein#load_toml('~/.config/nvim/dein_lazy.toml', {'lazy' : 1})
+  call dein#load_toml('~/.config/nvim/dein.toml')
+  call dein#load_toml('~/.config/nvim/dein_lazy.toml', {'lazy' : 1})
 
-    call dein#end()
-    call dein#save_state()
+  call dein#end()
 
-    if dein#check_install()
-      call dein#install()
-    endif
+  filetype plugin indent on
+  syntax enable
+
+  if dein#check_install()
+    call dein#install()
   endif
 else
   echoerr 'dein is not installed'
 endif
 
-filetype plugin indent on
-syntax enable
 " }}}
 
 " General settings {{{
