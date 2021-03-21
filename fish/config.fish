@@ -44,25 +44,6 @@ if status is-interactive
     set PATH $HOME/Library/Python/3.9/bin $PATH
   end
 
-  # powerline
-  if type powerline > /dev/null
-    myfunc_log 'powerline is installed, loading fish bindings...'
-    set powerline_status_location (python3 -m pip show powerline-status | grep 'Location: ' | cut -d' ' -f 2)
-    set fish_function_path $fish_function_path "$powerline_status_location/powerline/bindings/fish"
-    # powerline-setup
-
-    # powerline for tmux
-    if [ -n "$TMUX" ]
-      myfunc_log 'powerline is installed and in tmux, loading tmux bindings...'
-      tmux source "$powerline_status_location/powerline/bindings/tmux/powerline.conf"
-    else
-      myfunc_log 'not in tmux'
-      powerline-daemon -q
-    end
-  else
-    myfunc_err 'powerline is not installed.'
-  end
-
   # rbenv
   if type rbenv > /dev/null
     myfunc_log 'rbenv is installed'
