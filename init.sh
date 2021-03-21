@@ -101,8 +101,8 @@ brew install --cask \
 # python
 type pip3 > /dev/null 2>&1 && pip3 install --user --upgrade pip-review pynvim powerline-status powerline-gitstatus Send2Trash
 
-brew tap homebrew/cask-fonts
-brew install --cask \
-  font-meslo-lg-nerd-font
+# brew tap homebrew/cask-fonts
+# brew install --cask \
+#   font-meslo-lg-nerd-font
 
 [ $OSTYPE != "msys" ] && source ./linktohome.sh
