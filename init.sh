@@ -11,8 +11,6 @@ DOTFILES_DIR=~/.dotfiles
 cd $DOTFILES_DIR
 
 git pull
-git submodule init
-git submodule update
 
 # brew
 brew install \

@@ -1,5 +1,6 @@
 set DOTFILES_DIR $HOME/.dotfiles
 set SUBMODULES $DOTFILES_DIR/submodules
+set fish_greeting ''
 
 function myfunc_log
   echo -e "\e[0;32m"(gdate '+%Y/%m/%d %H:%M:%S.%N' || date '+%Y/%m/%d %H:%M:%S')" $argv\e[m"
@@ -17,35 +18,21 @@ if status is-interactive
     curl -sL git.io/fisher | source && fisher install jorgebucaran/fisher
   end
 
-  # brew
-  if type brew > /dev/null
-    myfunc_log 'brew is installed'
-    set -x HOMEBREW_BREWFILE $HOME/.dotfiles/Brewfile
-    set -x HOMEBREW_BREWFILE_ON_REQUEST 1
-    set -x HOMEBREW_BREWFILE_APPSTORE 0
-    #set PATH (brew --prefix coreutils)"/libexec/gnubin" $PATH
-    myfunc_log "brew is ok"
-
-    # nvm
-    if functions -q nvm
-      myfunc_log 'nvm is installed'
-      set -x NVM_DIR "$HOME/.nvm"
-      set -x nvm_prefix "$HOME/.nvm"
-      nvm use default
-    else
-      myfunc_err 'nvm is not installed.'
-    end
+  # nvm
+  if functions -q nvm
+    myfunc_log 'nvm is installed'
+    set -x NVM_DIR "$HOME/.nvm"
   else
-    myfunc_err 'brew is not installed.'
+    myfunc_err 'nvm is not installed.'
   end
 
   # python
-  if type python3 > /dev/null
+  if type python3 > /dev/null 2>&1
     set PATH $HOME/Library/Python/3.9/bin $PATH
   end
 
   # rbenv
-  if type rbenv > /dev/null
+  if type rbenv > /dev/null 2>&1
     myfunc_log 'rbenv is installed'
     source (rbenv init - | psub)
   else
@@ -53,7 +40,7 @@ if status is-interactive
   end
 
   # go
-  if type go > /dev/null; and [ -d $HOME/go ]
+  if type go > /dev/null 2>&1; and [ -d $HOME/go ]
     myfunc_log 'go is installed'
     set PATH $HOME/go/bin $PATH
   else
@@ -61,24 +48,18 @@ if status is-interactive
   end
 
   # jenv
-  if type jenv > /dev/null
+  if type jenv > /dev/null 2>&1
     myfunc_log 'jenv is installed'
     source (brew --prefix)/opt/jenv/libexec/fish/export.fish
     source (brew --prefix)/opt/jenv/libexec/fish/jenv.fish
+  else
+    myfunc_err 'jenv is not installed.'
   end
 
   source $DOTFILES_DIR/fish/fzf.fish
 
-  # dircolors
-  if [ -d $SUBMODULES/dircolors-solarized ]
-    myfunc_log 'dircolors-solarized is installed'
-    eval (gdircolors -c $SUBMODULES/dircolors-solarized/dircolors.ansi-universal)
-  else
-    myfunc_err 'dircolors-solarized is not installed.'
-  end
-
   # nvim
-  if type nvim > /dev/null
+  if type nvim > /dev/null 2>&1
     myfunc_log 'nvim is installed'
     alias vimdiff='nvim -d'
   else

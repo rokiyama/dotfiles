@@ -1,5 +1,5 @@
 function load_fzf
-  if ! type fzf > /dev/null
+  if ! type fzf > /dev/null 2>&1
     myfunc_err 'fzf is not installed.'
     return
   end
@@ -33,7 +33,7 @@ function load_fzf
   end
 
   # ghq
-  if type ghq > /dev/null
+  if type ghq > /dev/null 2>&1
     myfunc_log 'ghq is installed'
     function fzf_ghq_cd
       ghq list | fzf-tmux $FZF_DEFAULT_OPTS | read -l result && cd (ghq root)"/$result"
@@ -43,7 +43,7 @@ function load_fzf
   end
 
   # z
-  if type z > /dev/null
+  if type z > /dev/null 2>&1
     myfunc_log 'z is installed'
     function fzf_z_jump
       # TODO: スペースのあるパスで正しく動作しない
@@ -54,7 +54,7 @@ function load_fzf
   end
 
   # kubectl
-  if type kubectl > /dev/null
+  if type kubectl > /dev/null 2>&1
     myfunc_log 'kubectl is installed'
     function fzf_kubectl_get_all
       set -l target $argv[1]
