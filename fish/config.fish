@@ -3,11 +3,15 @@ set SUBMODULES $DOTFILES_DIR/submodules
 set fish_greeting ''
 
 function myfunc_log
-  echo -e "\e[0;32m"(gdate '+%Y/%m/%d %H:%M:%S.%N' || date '+%Y/%m/%d %H:%M:%S')" $argv\e[m"
+  if test VERBOSE = "true"
+    echo -e "\e[0;32m"(gdate '+%Y/%m/%d %H:%M:%S.%N' || date '+%Y/%m/%d %H:%M:%S')" $argv\e[m"
+  end
 end
 
 function myfunc_err
-  echo -e "\e[0;31m"(gdate '+%Y/%m/%d %H:%M:%S.%N' || date '+%Y/%m/%d %H:%M:%S')" $argv\e[m"
+  if test VERBOSE = "true"
+    echo -e "\e[0;31m"(gdate '+%Y/%m/%d %H:%M:%S.%N' || date '+%Y/%m/%d %H:%M:%S')" $argv\e[m"
+  end
 end
 
 if status is-interactive
@@ -128,8 +132,7 @@ if status is-interactive
   abbr glp  git log --graph --decorate -p
   abbr gpl  git pull
   abbr gps  git push
-  abbr gr   git remote
-  abbr gra  git remote -a
+  abbr gr   git remote -v
   abbr gbs  fzf_git_switch_branch
   abbr gbsa fzf_git_switch_branch --all
   abbr gbd  fzf_git_delete_branch
