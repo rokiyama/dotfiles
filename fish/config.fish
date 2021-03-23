@@ -113,7 +113,7 @@ if status is-interactive
   abbr tm 'tmux attach || tmux'
 
   abbr h fzf_history
-  abbr gq fzf_ghq_cd
+  abbr fgq fzf_ghq_cd
   abbr j fzf_z_jump
   abbr kga fzf_kubectl_get_all
 
