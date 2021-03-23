@@ -55,6 +55,7 @@ brew install \
   ripgrep \
   ruby-build \
   sqlite \
+  starship \
   svn \
   tmux \
   trash \

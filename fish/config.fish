@@ -22,6 +22,14 @@ if status is-interactive
     curl -sL git.io/fisher | source && fisher install jorgebucaran/fisher
   end
 
+  # starship
+  if type starship > /dev/null 2>&1
+    myfunc_log 'starship is installed'
+    starship init fish | source
+  else
+    myfunc_err 'starship is not installed.'
+  end
+
   # nvm
   if functions -q nvm
     myfunc_log 'nvm is installed'
