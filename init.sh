@@ -78,7 +78,6 @@ brew tap homebrew/cask
 brew install --cask \
   alacritty \
   alfred \
-  authy \
   chrome-remote-desktop-host \
   deepl \
   discord \
@@ -94,8 +93,8 @@ brew install --cask \
   zoom
 
 # mas
-#mas install 497799835 # Xcode
-#mas install 1352778147 # Bitwarden
+mas install 497799835  # Xcode
+mas install 1352778147 # Bitwarden
 
 # python
 type pip3 > /dev/null 2>&1 && pip3 install --user --upgrade pip-review pynvim powerline-status powerline-gitstatus Send2Trash
