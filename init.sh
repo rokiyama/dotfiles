@@ -29,9 +29,9 @@ brew install \
   git \
   gnu-sed \
   go \
+  gotop \
   grpcurl \
   hadolint \
-  htop \
   hugo \
   icu4c \
   jq \
