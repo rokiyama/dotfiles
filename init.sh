@@ -46,6 +46,7 @@ brew install \
   neovim \
   oniguruma \
   openssl \
+  pandoc \
   pcre2 \
   pkg-config \
   python \
