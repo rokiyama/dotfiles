@@ -38,6 +38,7 @@ endif
 
 " General settings {{{
 set mouse=a
+set clipboard+=unnamed
 
 " タブ・インデント設定
 set tabstop=2
