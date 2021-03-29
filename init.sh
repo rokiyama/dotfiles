@@ -85,6 +85,7 @@ brew install --cask \
   docker \
   drawio \
   evernote \
+  flutter \
   gimp \
   google-backup-and-sync \
   karabiner-elements \
