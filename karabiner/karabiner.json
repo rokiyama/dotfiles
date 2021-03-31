@@ -922,7 +922,7 @@
             "parameters": {
                 "delay_milliseconds_before_open_device": 1000
             },
-            "selected": true,
+            "selected": false,
             "simple_modifications": [
                 {
                     "from": {
@@ -946,6 +946,16 @@
                 },
                 {
                     "from": {
+                        "key_code": "quote"
+                    },
+                    "to": [
+                        {
+                            "key_code": "semicolon"
+                        }
+                    ]
+                },
+                {
+                    "from": {
                         "key_code": "return_or_enter"
                     },
                     "to": [
@@ -961,16 +971,6 @@
                     "to": [
                         {
                             "key_code": "return_or_enter"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "quote"
-                    },
-                    "to": [
-                        {
-                            "key_code": "semicolon"
                         }
                     ]
                 }
@@ -1873,6 +1873,36 @@
                                 "type": "basic"
                             }
                         ]
+                    },
+                    {
+                        "description": "Use d as Cmd+Delete in Photos",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com.apple.Photos"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": {
+                                        "optional": []
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_or_backspace",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
                     }
                 ]
             },
@@ -2030,7 +2060,7 @@
             "parameters": {
                 "delay_milliseconds_before_open_device": 1000
             },
-            "selected": false,
+            "selected": true,
             "simple_modifications": [
                 {
                     "from": {
