@@ -63,6 +63,9 @@ function load_fzf
       end
       kubectl get $target -A | fzf-tmux $FZF_DEFAULT_OPTS --header-lines=1 | read -l ns name _ && commandline "kubectl get $target -n $ns $name"
     end
+    function fzf_kubectl_port_forward
+      kubectl get svc -A | fzf-tmux $FZF_DEFAULT_OPTS --header-lines=1 | read -l ns name _ _ _ port _ && commandline "kubectl port-forward -n $ns svc/$name "(echo $port | cut -d'/' -f1)
+    end
   else
     myfunc_err 'kubectl is not installed.'
   end
