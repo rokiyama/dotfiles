@@ -120,24 +120,18 @@ let mapleader = "\<Space>"
 
 nnoremap <silent> <M-Space> :simalt ~<CR>
 
-" exchange colon/semicolon
-" nnoremap : ;
-" nnoremap ; :
-" vnoremap : ;
-" vnoremap ; :
-
 " emacs-like keybind {{{
-" noremap! <C-a>  <Home>
-" noremap! <C-e>  <End>
-" noremap! <C-b>  <Left>
-" noremap! <C-f>  <Right>
-" noremap! <C-d>  <Del>
-" noremap! <M-b>  <C-Left>
-" noremap! <M-f>  <C-Right>
+noremap! <C-a>  <Home>
+noremap! <C-e>  <End>
+noremap! <C-b>  <Left>
+noremap! <C-f>  <Right>
+noremap! <C-d>  <Del>
+noremap! <M-b>  <C-Left>
+noremap! <M-f>  <C-Right>
 " noremap! <M-d>  <Del>
 " noremap! <C-g>  <Esc>
-" cnoremap <C-p>  <Up>
-" cnoremap <C-n>  <Down>
+cnoremap <C-p>  <Up>
+cnoremap <C-n>  <Down>
 " }}}
 
 " edit {{{
