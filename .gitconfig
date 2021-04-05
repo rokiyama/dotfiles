@@ -1,6 +1,3 @@
-[user]
-  name = anonymous
-  email = anonymous@example.com
 [core]
   editor = nvim
   pager = less
