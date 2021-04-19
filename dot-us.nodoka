@@ -3,8 +3,8 @@ include "read-keyboard-define.nodoka"
 
 keymap Global
 
-  # F1キーで、のどかのメニューを開く
-  key F1 = &SendPostMessage("PostTray",,"のどか", 0x0205, 0, 0)
+  # F2キーで、のどかのメニューを開く
+  key F2 = &SendPostMessage("PostTray",,"のどか", 0x0205, 0, 0)
 
   mod control += CapsLock
   key *CapsLock = *LeftControl
@@ -30,12 +30,7 @@ keymap Global
   key M0-*u                 = *PageDown
   key M0-*i                 = *PageUp
   key M0-*o                 = *End
-  #key M0-*p                 = *PrintScreen
-  #key M0-*Atmark            = *ScrollLock
-  #key M0-*LeftSquareBracket = *Pause
-  #key M0-*z                 = *Apps
-  #key M0-*Semicolon         = *Insert
-  #key M0-*Colon             = *Delete
+  key M0-*p                 = *PrintScreen
   key M0-*BS                = *Delete
   key M0-*_1                = *F1
   key M0-*_2                = *F2
@@ -49,17 +44,16 @@ keymap Global
   key M0-*_0                = *F10
   key M0-*Hyphen            = *F11
   key M0-*EqualsSign        = *F12
+  key M0-F7                 = PreviousTrack
+  key M0-F8                 = Play/Pause
+  key M0-F9                 = NextTrack
+  key M0-F10                = Mute
+  key M0-F11                = VolumeDown
+  key M0-F12                = VolumeUp
 
-  mod alt -= LeftAlt
-  mod windows += LeftAlt
-  #mod alt += !!LeftAlt
-  key *LeftAlt = *LeftWindows	
+  mod alt += !!LeftAlt
 
-  mod windows -= LeftWindows
-  mod alt += LeftWindows
-  mod alt += !!LeftWindows
-  key *LeftWindows = *LeftAlt
-  key *LeftWindows = &SetImeStatus(off)
+  key *LeftAlt = &SetImeStatus(off)
 
   mod alt -= RightAlt
   key *A-RightAlt = &SetImeStatus(on)

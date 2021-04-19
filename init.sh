@@ -1,9 +1,10 @@
-#!/bin/sh
+#!/usr/bin/env bash
 set -uex
 
 if !(type brew > /dev/null 2>&1); then
   curl -fsSLo- https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash
 fi
+[ $OSTYPE = "linux-gnu" ] && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 DOTFILES_DIR=~/.dotfiles
 
@@ -12,60 +13,89 @@ cd $DOTFILES_DIR
 
 git pull
 
-# brew
 brew install \
   awscli \
   bat \
-  bluetoothconnector \
-  coreutils \
   docker-completion \
   docker-compose-completion \
-  findutils \
   fish \
   fzf \
   gdbm \
-  gettext \
   ghq \
   git \
-  gnu-sed \
   go \
   gotop \
   grpcurl \
   hadolint \
   hugo \
-  icu4c \
   jq \
   kind \
-  libevent \
-  libtermkey \
-  libuv \
-  libvterm \
   luajit \
-  mas \
-  msgpack \
   neovim \
   oniguruma \
   openssl \
   pandoc \
   pcre2 \
-  pkg-config \
   python \
   rbenv \
-  readline \
-  reattach-to-user-namespace \
   ripgrep \
   ruby-build \
   sqlite \
   starship \
   svn \
   tmux \
-  trash \
   unar \
   unibilium \
-  wakeonlan \
-  watch \
   xz
 
+# brew
+if [[ $OSTYPE =~ ^darwin ]]; then
+  brew install \
+
+  brew tap homebrew/cask
+    bluetoothconnector \
+    coreutils \
+    findutils \
+    gettext \
+    gnu-sed \
+    icu4c \
+    libevent \
+    libtermkey \
+    libuv \
+    libvterm \
+    mas \
+    msgpack \
+    pkg-config \
+    readline \
+    reattach-to-user-namespace \
+    trash \
+    wakeonlan \
+    watch
+
+  brew install --cask \
+    alacritty \
+    alfred \
+    chrome-remote-desktop-host \
+    deepl \
+    discord \
+    docker \
+    drawio \
+    evernote \
+    flutter \
+    gimp \
+    google-backup-and-sync \
+    karabiner-elements \
+    kindle \
+    typora \
+    visual-studio-code \
+    zoom
+
+  # mas
+  mas install 497799835  # Xcode
+  mas install 1352778147 # Bitwarden
+fi
+
+# fish
 if type fish 2>/dev/null; then
   readonly FISH_PATH=$(which fish)
   grep -x $FISH_PATH /etc/shells || sudo sh -c "echo $FISH_PATH >> /etc/shells"
@@ -74,33 +104,10 @@ if type fish 2>/dev/null; then
   fi
 fi
 
-brew tap homebrew/cask
-
-brew install --cask \
-  alacritty \
-  alfred \
-  chrome-remote-desktop-host \
-  deepl \
-  discord \
-  docker \
-  drawio \
-  evernote \
-  flutter \
-  gimp \
-  google-backup-and-sync \
-  karabiner-elements \
-  kindle \
-  typora \
-  visual-studio-code \
-  zoom
-
-# mas
-mas install 497799835  # Xcode
-mas install 1352778147 # Bitwarden
-
 # python
 type pip3 > /dev/null 2>&1 && pip3 install --user --upgrade pip-review pynvim powerline-status powerline-gitstatus Send2Trash
 
+# fonts
 brew tap homebrew/cask-fonts
 brew install --cask \
   font-fira-mono-nerd-font
