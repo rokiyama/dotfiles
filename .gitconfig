@@ -1,3 +1,6 @@
+[user]
+    name =
+    email =
 [core]
   editor = nvim
   pager = less
