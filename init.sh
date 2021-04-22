@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -uex
 
-[ $OSTYPE = "linux-gnu" ] && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+[ $OSTYPE = "linux-gnu" ] && [ -f /home/linuxbrew/.linuxbrew/bin/brew ] && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 if !(type brew > /dev/null 2>&1); then
   curl -fsSLo- https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash
 fi
@@ -13,6 +13,7 @@ cd $DOTFILES_DIR
 
 git pull
 
+# brew
 brew install \
   awscli \
   bat \
@@ -47,7 +48,6 @@ brew install \
   unibilium \
   xz
 
-# brew
 if [[ $OSTYPE =~ ^darwin ]]; then
   brew install \
 
@@ -67,6 +67,7 @@ if [[ $OSTYPE =~ ^darwin ]]; then
     pkg-config \
     readline \
     reattach-to-user-namespace \
+    switchaudio-osx \
     trash \
     unar \
     wakeonlan \
