@@ -17,6 +17,8 @@ keymap Global
   key Enter = S-Quote
   key S-Enter = Quote
 
+  key C-LeftSquareBracket = Esc
+
   # Custom modifier
   mod M0 += !LeftControl
 
