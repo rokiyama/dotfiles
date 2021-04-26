@@ -87,6 +87,7 @@ if [[ $OSTYPE =~ ^darwin ]]; then
     google-backup-and-sync \
     karabiner-elements \
     kindle \
+    slack \
     typora \
     visual-studio-code \
     zoom
