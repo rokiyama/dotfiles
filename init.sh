@@ -112,6 +112,6 @@ if [ -f $FISH_PATH ]; then
 fi
 
 # python
-type pip3 > /dev/null 2>&1 && pip3 install --user --upgrade pip-review pynvim powerline-status powerline-gitstatus Send2Trash
+type pip3 > /dev/null 2>&1 && pip3 install --user --upgrade pip-review pynvim Send2Trash
 
 [ $OSTYPE != "msys" ] && source ./linktohome.sh

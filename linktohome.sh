@@ -29,8 +29,5 @@ ln -s -f $dotfiles_dir/alacritty/alacritty.yml                  $HOME/.config/al
 ln -s -f $dotfiles_dir/fish/config.fish                         $HOME/.config/fish/config.fish
 ln -s -f $dotfiles_dir/fish/fish_plugins                        $HOME/.config/fish/fish_plugins
 
-[ -d $HOME/.config/powerline ]                      || mkdir -p $HOME/.config/powerline
-ln -s -f $dotfiles_dir/powerline/config.json                    $HOME/.config/powerline/config.json
-
 [ -d $HOME/.config/yamllint ]                       || mkdir -p $HOME/.config/yamllint
 ln -s -f $dotfiles_dir/yamllint/config                          $HOME/.config/yamllint/config
