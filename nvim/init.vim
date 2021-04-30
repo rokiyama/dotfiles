@@ -125,13 +125,12 @@ noremap! <C-a>  <Home>
 noremap! <C-e>  <End>
 noremap! <C-b>  <Left>
 noremap! <C-f>  <Right>
+cnoremap <C-p>  <Up>
+cnoremap <C-n>  <Down>
 noremap! <C-d>  <Del>
 noremap! <M-b>  <C-Left>
 noremap! <M-f>  <C-Right>
-" noremap! <M-d>  <Del>
-" noremap! <C-g>  <Esc>
-cnoremap <C-p>  <Up>
-cnoremap <C-n>  <Down>
+noremap! <M-d>  <Del>
 " }}}
 
 " edit {{{
