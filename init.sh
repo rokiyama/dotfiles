@@ -46,6 +46,7 @@ brew install \
   svn \
   tmux \
   unibilium \
+  urlview \
   xz
 
 if [[ $OSTYPE =~ ^darwin ]]; then
@@ -113,5 +114,9 @@ fi
 
 # python
 type pip3 > /dev/null 2>&1 && pip3 install --user --upgrade pip-review pynvim Send2Trash
+
+# tpm
+TPM_DIR=~/.tmux/plugins/tpm
+[[ -d $TPM_DIR ]] || git clone https://github.com/tmux-plugins/tpm.git $TPM_DIR
 
 [ $OSTYPE != "msys" ] && source ./linktohome.sh
