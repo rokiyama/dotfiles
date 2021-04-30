@@ -7,7 +7,6 @@ if !(type brew > /dev/null 2>&1); then
 fi
 
 DOTFILES_DIR=~/.dotfiles
-
 [[ -d $DOTFILES_DIR ]] || git clone https://github.com/rokiyama/dotfiles.git $DOTFILES_DIR
 cd $DOTFILES_DIR
 
@@ -51,8 +50,6 @@ brew install \
 
 if [[ $OSTYPE =~ ^darwin ]]; then
   brew install \
-
-  brew tap homebrew/cask
     bluetoothconnector \
     coreutils \
     findutils \
@@ -74,10 +71,13 @@ if [[ $OSTYPE =~ ^darwin ]]; then
     wakeonlan \
     watch
 
+  brew tap homebrew/cask
+
   brew install --cask \
     alacritty \
     alfred \
     chrome-remote-desktop-host \
+    dash \
     deepl \
     discord \
     docker \
