@@ -1,51 +1,51 @@
 [user]
-    name =
-    email =
+	name =
+	email =
 [core]
-  editor = nvim
-  pager = less
-  excludesfile = ~/.gitignore.global
-  autocrlf = false
+	editor = nvim
+	pager = less
+	excludesfile = ~/.gitignore.global
+	autocrlf = false
 [color]
-  ui = auto
+	ui = auto
 [push]
-  default = simple
+	default = simple
 [include]
-  path = ~/.gitconfig.local
+	path = ~/.gitconfig.local
 [diff "utf16"]
-  textconv = iconv -f utf-16 -t utf-8
+	textconv = iconv -f utf-16 -t utf-8
 [filter "lfs"]
-  clean = git-lfs clean -- %f
-  smudge = git-lfs smudge -- %f
-  process = git-lfs filter-process
-  required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
 [merge]
-  tool = nvimdiff
+	tool = nvimdiff
 [mergetool]
-  prompt = false
-  keepBackup = false
+	prompt = false
+	keepBackup = false
 [mergetool "nvimdiff"]
-  cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+	cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [alias]
-  ; co  = checkout
-  ; b   = branch -v
-  ; ba  = branch -avv
-  ; s   = status -s -b
-  ; a   = add
-  ; ap  = add -p
-  ; c   = commit -v
-  ; ca  = commit -va
-  ; d   = diff
-  ; dc  = diff --cached
-  ; f   = fetch
-  ; l   = log --graph --oneline --decorate
-  ; la  = log --graph --all --oneline --decorate
-  ; lg  = log --graph --decorate --format=fuller
-  ; lga = log --graph --all --decorate --format=fuller
-  ; lp  = log --graph --decorate -p
-  ; pl  = pull
-  ; ps  = push
-  ; r   = remote
-  ; ra  = remote -v
+	; co  = checkout
+	; b   = branch -v
+	; ba  = branch -avv
+	; s   = status -s -b
+	; a   = add
+	; ap  = add -p
+	; c   = commit -v
+	; ca  = commit -va
+	; d   = diff
+	; dc  = diff --cached
+	; f   = fetch
+	; l   = log --graph --oneline --decorate
+	; la  = log --graph --all --oneline --decorate
+	; lg  = log --graph --decorate --format=fuller
+	; lga = log --graph --all --decorate --format=fuller
+	; lp  = log --graph --decorate -p
+	; pl  = pull
+	; ps  = push
+	; r   = remote
+	; ra  = remote -v
 [pull]
-  ff = only
+	ff = only
