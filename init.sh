@@ -43,6 +43,7 @@ brew install \
   sqlite \
   starship \
   svn \
+  tig \
   tmux \
   unibilium \
   urlview \
@@ -90,8 +91,7 @@ if [[ $OSTYPE =~ ^darwin ]]; then
     kindle \
     slack \
     typora \
-    visual-studio-code \
-    zoom
+    visual-studio-code
 
   # fonts
   brew tap homebrew/cask-fonts

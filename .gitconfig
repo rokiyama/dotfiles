@@ -3,7 +3,7 @@
 	email =
 [core]
 	editor = nvim
-	pager = less
+	pager = bat
 	excludesfile = ~/.gitignore.global
 	autocrlf = false
 [color]
