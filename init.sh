@@ -77,6 +77,7 @@ if [[ $OSTYPE =~ ^darwin ]]; then
   brew install --cask \
     alacritty \
     alfred \
+    android-studio \
     chrome-remote-desktop-host \
     dash \
     deepl \
