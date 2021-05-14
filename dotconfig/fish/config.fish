@@ -78,7 +78,6 @@ if status is-interactive
     myfunc_log 'fzf is installed'
     set -a FZF_DEFAULT_OPTS "--tiebreak=index"
     set -a FZF_DEFAULT_OPTS "--toggle-sort=ctrl-r"
-    set -a FZF_DEFAULT_OPTS "--query=(commandline)"
 
     function fzf_history
       commandline (history | fzf)
