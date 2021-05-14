@@ -1,10 +1,11 @@
+# vim: ft=gitconfig
 [user]
 	name =
 	email =
 [core]
 	editor = nvim
 	pager = bat
-	excludesfile = ~/.gitignore.global
+	excludesfile = ~/.config/git/ignore_global
 	autocrlf = false
 [color]
 	ui = auto

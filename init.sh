@@ -12,6 +12,10 @@ cd $DOTFILES_DIR
 
 git pull
 
+# bin directory
+mkdir -p $HOME/bin
+fish_add_path $HOME/bin
+
 # brew
 brew install \
   awscli \
@@ -117,7 +121,7 @@ fi
 type pip3 > /dev/null 2>&1 && pip3 install --user --upgrade pip-review pynvim Send2Trash
 
 # tpm
-TPM_DIR=~/.tmux/plugins/tpm
+TPM_DIR=$HOME/.cache/tmux/plugins/tpm
 [[ -d $TPM_DIR ]] || git clone https://github.com/tmux-plugins/tpm.git $TPM_DIR
 
 [ $OSTYPE != "msys" ] && source ./linktohome.sh
