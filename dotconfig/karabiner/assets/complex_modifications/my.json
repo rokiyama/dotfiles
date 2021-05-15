@@ -344,46 +344,6 @@
           ]
         }
       ]
-    },
-    {
-      "description": "In Chrome, use Cmd+T as Cmd+T(new tab), Cmd+Option+G(new tab group), Esc(close tab name input)",
-      "manipulators": [
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "t",
-            "modifiers": {
-              "mandatory": ["left_command"]
-            }
-          },
-          "to": [
-            {
-              "key_code": "t",
-              "modifiers": [
-                "left_command"
-              ]
-            },
-            {
-              "key_code": "g",
-              "modifiers": [
-                "left_command",
-                "left_option"
-              ]
-            },
-            {
-              "key_code": "escape"
-            }
-          ],
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "^com.google.Chrome"
-              ]
-            }
-          ]
-        }
-      ]
     }
   ]
 }
