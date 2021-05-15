@@ -6,7 +6,7 @@ if !(type brew > /dev/null 2>&1); then
   curl -fsSLo- https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash
 fi
 
-DOTFILES_DIR=~/.dotfiles
+DOTFILES_DIR=$HOME/.dotfiles
 [[ -d $DOTFILES_DIR ]] || git clone https://github.com/rokiyama/dotfiles.git $DOTFILES_DIR
 cd $DOTFILES_DIR
 
@@ -116,6 +116,8 @@ if [ -f $FISH_PATH ]; then
     chsh -s $FISH_PATH
   fi
 fi
+fish -c "source $DOTFILES_DIR/fish_universal/abbr.fish"
+[ $OSTYPE = "linux-gnu" ] && fish -c "source $DOTFILES_DIR/fish_universal/linuxbrew.fish"
 
 # bin directory
 mkdir -p $HOME/bin
