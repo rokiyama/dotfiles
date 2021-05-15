@@ -1,7 +1,6 @@
 command_timeout = 2000
 
 [aws]
-format = 'on [$symbol($profile )($region )]($style)'
 symbol = ' '
 
 [gcloud]
