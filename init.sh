@@ -12,10 +12,6 @@ cd $DOTFILES_DIR
 
 git pull
 
-# bin directory
-mkdir -p $HOME/bin
-fish_add_path $HOME/bin
-
 # brew
 brew install \
   awscli \
@@ -50,8 +46,8 @@ brew install \
   tig \
   tmux \
   unibilium \
-  urlview \
-  xz
+  xz \
+  || echo 'brew install failed, continuing' >&2
 
 if [[ $OSTYPE =~ ^darwin ]]; then
   brew install \
@@ -73,8 +69,10 @@ if [[ $OSTYPE =~ ^darwin ]]; then
     switchaudio-osx \
     trash \
     unar \
+    urlview \
     wakeonlan \
-    watch
+    watch \
+    || echo 'brew install failed, continuing' >&2
 
   brew tap homebrew/cask
 
@@ -96,12 +94,14 @@ if [[ $OSTYPE =~ ^darwin ]]; then
     kindle \
     slack \
     typora \
-    visual-studio-code
+    visual-studio-code \
+    || echo 'brew install failed, continuing' >&2
 
   # fonts
   brew tap homebrew/cask-fonts
   brew install --cask \
-    font-fira-mono-nerd-font
+    font-fira-mono-nerd-font \
+    || echo 'brew install failed, continuing' >&2
 
   # mas
   mas install 497799835  # Xcode
@@ -116,6 +116,10 @@ if [ -f $FISH_PATH ]; then
     chsh -s $FISH_PATH
   fi
 fi
+
+# bin directory
+mkdir -p $HOME/bin
+fish -c "fish_add_path $HOME/bin"
 
 # python
 type pip3 > /dev/null 2>&1 && pip3 install --user --upgrade pip-review pynvim Send2Trash

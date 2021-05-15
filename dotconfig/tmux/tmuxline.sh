@@ -1,7 +1,6 @@
 #!/bin/sh
 set -eu
 
-readonly date=$(date)
 readonly global_ip_addr=$(curl ifconfig.me)
 
 tmux set -g status-justify "left"
