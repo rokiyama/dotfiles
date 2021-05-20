@@ -100,6 +100,7 @@ if [[ $OSTYPE =~ ^darwin ]]; then
   # fonts
   brew tap homebrew/cask-fonts
   brew install --cask \
+    font-fira-code-nerd-font \
     font-fira-mono-nerd-font \
     || echo 'brew install failed, continuing' >&2
 

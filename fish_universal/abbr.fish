@@ -18,7 +18,7 @@ abbr dpsa docker ps -a
 abbr tjq "jq -c '.time |= (./1000|todate)'"
 
 abbr gs   git status -sb
-abbr gb   git branch -vv
+abbr gb   git branch -v
 abbr gba  git branch -av
 abbr ga   git add
 abbr gap  git add -p
