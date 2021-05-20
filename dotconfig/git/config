@@ -4,7 +4,6 @@
 	email =
 [core]
 	editor = nvim
-	pager = bat
 	excludesfile = ~/.config/git/ignore_global
 	autocrlf = false
 [color]
