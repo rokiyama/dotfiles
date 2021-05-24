@@ -57,6 +57,7 @@ if [[ $OSTYPE =~ ^darwin ]]; then
     gettext \
     gnu-sed \
     icu4c \
+    iperf3 \
     libevent \
     libtermkey \
     libuv \
