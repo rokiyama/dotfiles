@@ -28,6 +28,7 @@ keymap Global
   key M0-*k                 = *Up
   key M0-*l                 = *Right
   key M0-*n                 = *BS
+  key M0-*d                 = *Delete
   key M0-*y                 = *Home
   key M0-*u                 = *PageDown
   key M0-*i                 = *PageUp
