@@ -96,6 +96,7 @@ if [[ $OSTYPE =~ ^darwin ]]; then
     slack \
     typora \
     visual-studio-code \
+    zulip \
     || echo 'brew install failed, continuing' >&2
 
   # fonts
