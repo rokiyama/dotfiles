@@ -49,3 +49,5 @@
 	; ra  = remote -v
 [pull]
 	ff = only
+[hub]
+	protocol = https
