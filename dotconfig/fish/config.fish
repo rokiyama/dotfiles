@@ -92,9 +92,9 @@ if status is-interactive
       if string match 'remotes/*' $result
         set -l branch_name (string replace -r '^remotes/' '' $result)
         set -l local_branch_name (string replace -r '^remotes/[[:alnum:]]*/?' '' $result)
-        commandline "git switch -c $local_branch_name $branch_name"
+        eval "git switch -c $local_branch_name $branch_name"
       else
-        commandline "git switch $result"
+        eval "git switch $result"
       end
     end
 
