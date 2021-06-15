@@ -96,7 +96,6 @@ if [[ $OSTYPE =~ ^darwin ]]; then
     slack \
     typora \
     visual-studio-code \
-    zulip \
     || echo 'brew install failed, continuing' >&2
 
   # fonts
@@ -104,6 +103,7 @@ if [[ $OSTYPE =~ ^darwin ]]; then
   brew install --cask \
     font-fira-code-nerd-font \
     font-fira-mono-nerd-font \
+    font-noto-sans-cjk-jp \
     || echo 'brew install failed, continuing' >&2
 
   # mas
