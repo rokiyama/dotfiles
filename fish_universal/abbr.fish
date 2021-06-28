@@ -38,5 +38,3 @@ abbr gr   git remote -v
 abbr gbs  fzf_git_switch_branch
 abbr gbsa fzf_git_switch_branch --all
 abbr gbd  fzf_git_delete_branch
-
-abbr c code .
