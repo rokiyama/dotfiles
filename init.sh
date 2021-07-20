@@ -58,6 +58,7 @@ if [[ $OSTYPE =~ ^darwin ]]; then
     gnu-sed \
     icu4c \
     iperf3 \
+    keycastr \
     libevent \
     libtermkey \
     libuv \
