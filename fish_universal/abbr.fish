@@ -11,7 +11,7 @@ abbr fgq fzf_ghq_cd
 abbr j fzf_z_jump
 abbr kga fzf_kubectl_get_all
 
-abbr cmpo docker-compose
+abbr cmpo docker compose
 abbr k kubectl
 abbr dpsa docker ps -a
 
@@ -38,3 +38,5 @@ abbr gr   git remote -v
 abbr gbs  fzf_git_switch_branch
 abbr gbsa fzf_git_switch_branch --all
 abbr gbd  fzf_git_delete_branch
+
+abbr gcd  git 'status >/dev/null && cd (git rev-parse --show-toplevel)'
