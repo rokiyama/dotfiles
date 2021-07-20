@@ -1,8 +1,9 @@
 command_timeout = 2000
 
 [aws]
+format = '[$symbol($region )(\[$duration\])]($style)'
 symbol = ' '
 
 [gcloud]
-format = 'on [$symbol($region)]($style) '	
+format = '[$symbol($region)]($style) '
 symbol = ' '
