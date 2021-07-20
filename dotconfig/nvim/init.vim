@@ -1,6 +1,7 @@
 " vim: set foldmethod=marker :
 set encoding=utf-8
 scriptencoding utf-8
+lang en_US.UTF-8
 
 " Initialize {{{
 if &compatible
