@@ -1,8 +1,6 @@
 #!/bin/sh
 set -eu
 
-readonly global_ip_addr=$(curl ifconfig.me)
-
 tmux set -g status-justify "left"
 tmux set -g status "on"
 tmux set -g status-left-style "none"
@@ -18,6 +16,6 @@ tmux setw -g window-status-activity-style "none"
 tmux setw -g window-status-separator ""
 tmux setw -g window-status-style "none,fg=colour248,bg=colour238"
 tmux set -g status-left "#[fg=colour238,bg=colour117] #S #[fg=colour117,bg=colour238,nobold,nounderscore,noitalics]"
-tmux set -g status-right "#{prefix_highlight}#[fg=colour240,bg=colour238,nobold,nounderscore,noitalics]#[fg=colour247,bg=colour240] #(ipconfig getifaddr en0)  ${global_ip_addr} "
+tmux set -g status-right "#{prefix_highlight}#[fg=colour240,bg=colour238,nobold,nounderscore,noitalics]#[fg=colour247,bg=colour240] #(ipconfig getifaddr en0)  #(date '+%a %b %d %l:%M %p') "
 tmux setw -g window-status-format "#[fg=colour248,bg=colour238] #I #[fg=colour248,bg=colour238] #W "
 tmux setw -g window-status-current-format "#[fg=colour238,bg=colour240,nobold,nounderscore,noitalics]#[fg=colour252,bg=colour240] #I #[fg=colour252,bg=colour240] #W #[fg=colour240,bg=colour238,nobold,nounderscore,noitalics]"
