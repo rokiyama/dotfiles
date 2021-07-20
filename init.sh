@@ -90,12 +90,15 @@ if [[ $OSTYPE =~ ^darwin ]]; then
     evernote \
     flutter \
     gimp \
+    gitify \
     google-backup-and-sync \
     karabiner-elements \
     kindle \
+    notion \
     slack \
     typora \
     visual-studio-code \
+    zoom \
     || echo 'brew install failed, continuing' >&2
 
   # fonts
