@@ -4,6 +4,7 @@
 /fish/fish_variables
 /fish/functions
 /flutter/tool_state
+/flutter/custom_devices.json
 /gcloud
 /gtk-2.0
 /karabiner/automatic_backups
