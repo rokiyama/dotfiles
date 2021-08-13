@@ -83,7 +83,6 @@ if [[ $OSTYPE =~ ^darwin ]]; then
     alfred \
     android-studio \
     chrome-remote-desktop-host \
-    dash \
     deepl \
     discord \
     docker \
@@ -95,11 +94,12 @@ if [[ $OSTYPE =~ ^darwin ]]; then
     google-backup-and-sync \
     karabiner-elements \
     kindle \
-    notion \
     slack \
-    typora \
     visual-studio-code \
     || echo 'brew install failed, continuing' >&2
+
+  brew tap earthly/earthly
+  brew install earthly/earthly/earthly
 
   # fonts
   brew tap homebrew/cask-fonts
