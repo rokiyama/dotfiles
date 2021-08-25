@@ -121,9 +121,15 @@ if [ -f $FISH_PATH ]; then
   if [ $SHELL != $(which fish) ]; then
     chsh -s $FISH_PATH
   fi
+  fish -c "source $DOTFILES_DIR/fish_universal/abbr.fish"
+  [ $OSTYPE = "linux-gnu" ] && fish -c "source $DOTFILES_DIR/fish_universal/linuxbrew.fish"
 fi
-fish -c "source $DOTFILES_DIR/fish_universal/abbr.fish"
-[ $OSTYPE = "linux-gnu" ] && fish -c "source $DOTFILES_DIR/fish_universal/linuxbrew.fish"
+
+# fzf
+readonly FZF_INSTALL_PATH=$(brew --prefix)/opt/fzf/install
+if [ -f $FZF_INSTALL_PATH ]; then
+  $FZF_INSTALL_PATH --no-bash --no-zsh
+fi
 
 # bin directory
 mkdir -p $HOME/bin
