@@ -69,6 +69,7 @@ if [[ $OSTYPE =~ ^darwin ]]; then
     pkg-config \
     readline \
     reattach-to-user-namespace \
+    shared-mime-info \
     switchaudio-osx \
     trash \
     unar \
