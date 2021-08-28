@@ -94,6 +94,7 @@ if [[ $OSTYPE =~ ^darwin ]]; then
     gimp \
     gitify \
     google-backup-and-sync \
+    inkscape \
     karabiner-elements \
     kindle \
     slack \
