@@ -92,13 +92,13 @@ if [[ $OSTYPE =~ ^darwin ]]; then
     evernote \
     flutter \
     gimp \
-    gitify \
     google-backup-and-sync \
     inkscape \
     karabiner-elements \
     kindle \
     slack \
     visual-studio-code \
+    vlc \
     || echo 'brew install failed, continuing' >&2
 
   brew tap earthly/earthly
