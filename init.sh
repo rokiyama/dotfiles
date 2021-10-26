@@ -92,6 +92,7 @@ if [[ $OSTYPE =~ ^darwin ]]; then
     evernote \
     flutter \
     gimp \
+    gitify \
     google-backup-and-sync \
     inkscape \
     karabiner-elements \
