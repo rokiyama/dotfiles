@@ -3,7 +3,7 @@ set -uex
 
 [ $OSTYPE = "linux-gnu" ] && [ -f /home/linuxbrew/.linuxbrew/bin/brew ] && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 if !(type brew > /dev/null 2>&1); then
-  curl -fsSLo- https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 DOTFILES_DIR=$HOME/.dotfiles
