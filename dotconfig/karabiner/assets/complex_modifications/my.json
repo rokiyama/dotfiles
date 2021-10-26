@@ -395,6 +395,40 @@
           ]
         }
       ]
+    },
+    {
+      "description": "Press right_shift+left_shift+backspace to enable US G915 profile",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "delete_or_backspace",
+            "modifiers": { "mandatory": ["right_shift", "left_shift"] }
+          },
+          "to": [
+            {
+              "shell_command": "'/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli' --select-profile 'US G915'"
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "Press right_shift+left_shift+backspace to enable US MacBook profile",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "delete_or_backspace",
+            "modifiers": { "mandatory": ["right_shift", "left_shift"] }
+          },
+          "to": [
+            {
+              "shell_command": "'/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli' --select-profile 'US MacBook'"
+            }
+          ],
+          "type": "basic"
+        }
+      ]
     }
   ]
 }
