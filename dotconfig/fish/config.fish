@@ -1,5 +1,7 @@
 set fish_greeting ''
 
+eval (/opt/homebrew/bin/brew shellenv)
+
 function myfunc_log
   if test "$VERBOSE" = "true"
     echo -e "\e[0;32m"(gdate '+%Y/%m/%d %H:%M:%S.%N' || date '+%Y/%m/%d %H:%M:%S')" $argv\e[m"
