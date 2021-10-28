@@ -18,8 +18,6 @@ git pull
 brew install \
   awscli \
   bat \
-  docker-completion \
-  docker-compose-completion \
   fish \
   fzf \
   gdbm \
@@ -51,6 +49,9 @@ brew install \
   xz \
   || echo 'brew install failed, continuing' >&2
 
+[ $OSTYPE != "msys" ] && source ./linktohome.sh
+
+# macos
 if [[ $OSTYPE =~ ^darwin ]]; then
   brew install \
     bluetoothconnector \
@@ -86,7 +87,6 @@ if [[ $OSTYPE =~ ^darwin ]]; then
     alacritty \
     alfred \
     android-studio \
-    chrome-remote-desktop-host \
     deepl \
     discord \
     docker \
@@ -95,7 +95,8 @@ if [[ $OSTYPE =~ ^darwin ]]; then
     flutter \
     gimp \
     gitify \
-    google-backup-and-sync \
+    google-chrome \
+    google-drive \
     inkscape \
     karabiner-elements \
     kindle \
@@ -105,7 +106,8 @@ if [[ $OSTYPE =~ ^darwin ]]; then
     || echo 'brew install failed, continuing' >&2
 
   brew tap earthly/earthly
-  brew install earthly/earthly/earthly
+  brew install earthly/earthly/earthly \
+    || echo 'brew install failed, continuing' >&2
 
   # fonts
   brew tap homebrew/cask-fonts
@@ -147,5 +149,3 @@ type pip3 > /dev/null 2>&1 && pip3 install --user --upgrade pip-review pynvim Se
 # tpm
 TPM_DIR=$HOME/.cache/tmux/plugins/tpm
 [[ -d $TPM_DIR ]] || git clone https://github.com/tmux-plugins/tpm.git $TPM_DIR
-
-[ $OSTYPE != "msys" ] && source ./linktohome.sh
