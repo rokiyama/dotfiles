@@ -90,19 +90,16 @@ if [[ $OSTYPE =~ ^darwin ]]; then
     deepl \
     discord \
     docker \
-    drawio \
     evernote \
     flutter \
     gimp \
     gitify \
     google-chrome \
-    google-drive \
     inkscape \
     karabiner-elements \
     kindle \
     slack \
     visual-studio-code \
-    vlc \
     || echo 'brew install failed, continuing' >&2
 
   brew tap earthly/earthly
