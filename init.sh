@@ -29,7 +29,7 @@ brew install \
   hadolint \
   hugo \
   jq \
-  kind \
+  kustomize \
   luajit \
   neovim \
   oniguruma \
