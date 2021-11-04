@@ -55,6 +55,7 @@ brew install \
 if [[ $OSTYPE =~ ^darwin ]]; then
   brew install \
     bluetoothconnector \
+    bash \
     coreutils \
     findutils \
     gettext \
