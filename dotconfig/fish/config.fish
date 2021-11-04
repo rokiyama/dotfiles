@@ -81,10 +81,6 @@ if status is-interactive
     set -a FZF_DEFAULT_OPTS "--tiebreak=index"
     set -a FZF_DEFAULT_OPTS "--toggle-sort=ctrl-r"
 
-    function fzf_history
-      commandline (history | fzf)
-    end
-
     # fzf git
     function fzf_git_switch_branch
       git branch -v $argv | fzf-tmux $FZF_DEFAULT_OPTS | sed 's/^\*//' | read -l result _
