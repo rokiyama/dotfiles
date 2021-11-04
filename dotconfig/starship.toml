@@ -7,3 +7,6 @@ symbol = ' '
 [gcloud]
 format = '[$symbol($region)]($style) '
 symbol = ' '
+
+[kubernetes]
+disabled = false
