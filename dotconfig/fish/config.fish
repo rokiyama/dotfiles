@@ -1,6 +1,8 @@
 set fish_greeting ''
 
-eval (/opt/homebrew/bin/brew shellenv)
+if [ -f /opt/homebrew/bin/brew ]
+  eval (/opt/homebrew/bin/brew shellenv)
+end
 
 function myfunc_log
   if test "$VERBOSE" = "true"
