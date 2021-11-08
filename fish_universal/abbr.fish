@@ -4,7 +4,8 @@ abbr -e (abbr -l)
 abbr l ls -lhav
 abbr d cd
 
-abbr tm 'tmux attach || tmux'
+abbr tm  tmux
+abbr tma tmux attach
 
 abbr h fzf_history
 abbr fgq fzf_ghq_cd
