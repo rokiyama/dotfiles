@@ -101,6 +101,17 @@ if status is-interactive
       git branch -v | fzf-tmux $FZF_DEFAULT_OPTS | sed 's/^\*//' | read -l result _ && commandline "git branch -d $result"
     end
 
+    function fzf_git_cd_worktree
+      git worktree list | fzf-tmux $FZF_DEFAULT_OPTS | read -l result
+      echo $result | sed 's/^\*//' | read -l path _
+      if [ -z $path ]
+        echo "No worktree selected"
+      else
+        echo $result
+        eval "cd $path"
+      end
+    end
+
     # ghq
     if type ghq > /dev/null 2>&1
       myfunc_log 'ghq is installed'
