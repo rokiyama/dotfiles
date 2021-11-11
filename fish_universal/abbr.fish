@@ -7,7 +7,8 @@ abbr d cd
 abbr tm  tmux
 abbr tma tmux attach
 
-abbr h fzf_history
+abbr h history
+abbr hc 'history | fzf | read -l result && [ -n $result ] && echo -n $result | pbcopy && echo Copied: (pbpaste)'
 abbr fgq fzf_ghq_cd
 abbr j fzf_z_jump
 abbr kga fzf_kubectl_get_all
@@ -42,3 +43,4 @@ abbr gbd  fzf_git_delete_branch
 abbr gcw  fzf_git_cd_worktree
 
 abbr gcd  git 'status >/dev/null && cd (git rev-parse --show-toplevel)'
+abbr gtop git rev-parse --show-toplevel
