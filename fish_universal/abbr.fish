@@ -41,6 +41,7 @@ abbr gbs  fzf_git_switch_branch
 abbr gbsa fzf_git_switch_branch --all
 abbr gbd  fzf_git_delete_branch
 abbr gcw  fzf_git_cd_worktree
+abbr gw   git worktree
 
 abbr gcd  git 'status >/dev/null && cd (git rev-parse --show-toplevel)'
 abbr gtop git rev-parse --show-toplevel
