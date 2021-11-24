@@ -2,4 +2,4 @@
 .netrwhist
 *.swp
 .DS_Store
-/.wt-*
+/.wt/*
