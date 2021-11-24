@@ -86,7 +86,6 @@ if [[ $OSTYPE =~ ^darwin ]]; then
 
   brew install --cask \
     1password \
-    alacritty \
     alfred \
     android-studio \
     deepl \
