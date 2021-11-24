@@ -29,6 +29,8 @@ brew install \
   hadolint \
   hugo \
   jq \
+  k3d \
+  kubeseal \
   kustomize \
   luajit \
   neovim \
@@ -40,6 +42,7 @@ brew install \
   rbenv \
   ripgrep \
   ruby-build \
+  rust \
   sqlite \
   starship \
   svn \
@@ -54,8 +57,8 @@ brew install \
 # macos
 if [[ $OSTYPE =~ ^darwin ]]; then
   brew install \
-    bluetoothconnector \
     bash \
+    bluetoothconnector \
     coreutils \
     findutils \
     gettext \
@@ -99,6 +102,7 @@ if [[ $OSTYPE =~ ^darwin ]]; then
     inkscape \
     karabiner-elements \
     kindle \
+    numi \
     slack \
     visual-studio-code \
     || echo 'brew install failed, continuing' >&2
