@@ -21,6 +21,7 @@ brew install \
   fish \
   fzf \
   gdbm \
+  gh \
   ghq \
   git \
   go \
