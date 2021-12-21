@@ -122,7 +122,6 @@ if [[ $OSTYPE =~ ^darwin ]]; then
 
   # mas
   mas install 497799835  # Xcode
-  mas install 1352778147 # Bitwarden
 fi
 
 # fish
