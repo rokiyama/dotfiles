@@ -46,3 +46,5 @@ abbr gwl  git worktree list
 
 abbr gcd  git 'status >/dev/null && cd (git rev-parse --show-toplevel)'
 abbr gtop git rev-parse --show-toplevel
+
+abbr baty bat -l yaml
