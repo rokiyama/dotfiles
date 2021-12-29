@@ -18,6 +18,7 @@ git pull
 brew install \
   awscli \
   bat \
+  firebase-cli \
   fish \
   fzf \
   gdbm \
