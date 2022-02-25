@@ -4,6 +4,10 @@ if [ -f /opt/homebrew/bin/brew ]
   eval (/opt/homebrew/bin/brew shellenv)
 end
 
+if [ -f ~/.local/private_functions.fish ]
+  source ~/.local/private_functions.fish
+end
+
 function myfunc_log
   if test "$VERBOSE" = "true"
     echo -e "\e[0;32m"(gdate '+%Y/%m/%d %H:%M:%S.%N' || date '+%Y/%m/%d %H:%M:%S')" $argv\e[m"
