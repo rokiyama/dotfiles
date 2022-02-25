@@ -89,7 +89,7 @@ if status is-interactive
 
     # fzf git
     function fzf_git_switch_branch
-      git branch -v $argv | fzf-tmux $FZF_DEFAULT_OPTS | sed 's/^\*//' | read -l result _
+      git branch -v $argv | fzf-tmux $FZF_DEFAULT_OPTS | sed 's/^[\*\+]//' | read -l result _
       if [ -z $result ]
         return
       end
@@ -102,12 +102,12 @@ if status is-interactive
     end
 
     function fzf_git_delete_branch
-      git branch -v | fzf-tmux $FZF_DEFAULT_OPTS | sed 's/^\*//' | read -l result _ && commandline "git branch -d $result"
+      git branch -v | fzf-tmux $FZF_DEFAULT_OPTS | sed 's/^[\*\+]//' | read -l result _ && commandline "git branch -d $result"
     end
 
     function fzf_git_cd_worktree
       git worktree list | fzf-tmux $FZF_DEFAULT_OPTS | read -l result
-      echo $result | sed 's/^\*//' | read -l path _
+      echo $result | sed 's/^[\*\+]//' | read -l path _
       if [ -z $path ]
         echo "No worktree selected"
       else
