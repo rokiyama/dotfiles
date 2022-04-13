@@ -18,6 +18,7 @@ git pull
 brew install \
   awscli \
   bat \
+  fd \
   firebase-cli \
   fish \
   fzf \
@@ -147,7 +148,7 @@ mkdir -p $HOME/bin
 fish -c "fish_add_path $HOME/bin"
 
 # python
-type pip3 > /dev/null 2>&1 && pip3 install --user --upgrade pip-review pynvim Send2Trash
+type pip3 > /dev/null 2>&1 && pip3 install --user --upgrade pip-review pynvim Send2Trash yq
 
 # tpm
 TPM_DIR=$HOME/.cache/tmux/plugins/tpm
