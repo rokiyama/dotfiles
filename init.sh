@@ -47,6 +47,7 @@ brew install \
   ruby-build \
   rust \
   sqlite \
+  haskell-stack \
   starship \
   svn \
   tig \
