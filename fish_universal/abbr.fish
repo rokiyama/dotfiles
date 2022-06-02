@@ -10,14 +10,15 @@ abbr tma tmux attach
 abbr h history
 abbr hc 'history | fzf | read -l result && [ -n $result ] && echo -n $result | pbcopy && echo Copied: (pbpaste)'
 abbr fgq fzf_ghq_cd
-abbr j fzf_z_jump
+abbr j   fzf_z_jump
+abbr dj  'fd --type d | fzf | read TARGET_DIR && cd $TARGET_DIR'
 abbr kga fzf_kubectl_get_all
 
 abbr cmpo docker compose
 abbr k kubectl
 abbr dpsa docker ps -a
 
-abbr tjq "jq -c '.time |= (./1000|todate)'"
+abbr tjq "jq -c '.time |= (./1000|todate)"
 
 abbr gs   git status -sb
 abbr gb   git branch -v
@@ -39,12 +40,13 @@ abbr gps  git push
 abbr gr   git remote -v
 abbr gbs  fzf_git_switch_branch
 abbr gbsa fzf_git_switch_branch --all
-abbr gbd  fzf_git_delete_branch
+abbr gbd  git branch -d
 abbr gcw  fzf_git_cd_worktree
 abbr gw   git worktree
 abbr gwl  git worktree list
+abbr gwa  git_add_worktree
 
 abbr gcd  git 'status >/dev/null && cd (git rev-parse --show-toplevel)'
 abbr gtop git rev-parse --show-toplevel
 
-abbr baty bat -l yaml
+abbr by   bat -l yaml

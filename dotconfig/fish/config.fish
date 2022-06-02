@@ -89,7 +89,7 @@ if status is-interactive
 
     # fzf git
     function fzf_git_switch_branch
-      git branch -v $argv | fzf-tmux $FZF_DEFAULT_OPTS | sed 's/^[\*\+]//' | read -l result _
+      git branch -v $argv | grep -v '^\+' | fzf-tmux $FZF_DEFAULT_OPTS | sed 's/^[\*\+]//' | read -l result _
       if [ -z $result ]
         return
       end
@@ -102,7 +102,8 @@ if status is-interactive
     end
 
     function fzf_git_delete_branch
-      git branch -v | fzf-tmux $FZF_DEFAULT_OPTS | sed 's/^[\*\+]//' | read -l result _ && commandline "git branch -d $result"
+      git branch -v | fzf-tmux $FZF_DEFAULT_OPTS | sed 's/^[\*\+]//' | read -l result _
+      git branch -d $result
     end
 
     function fzf_git_cd_worktree
@@ -183,5 +184,15 @@ if status is-interactive
     npm update -g
     pip-review --auto
     fisher update
+  end
+
+  function git_add_worktree
+    set -l branch $argv[1]
+    if [ -z $branch ]
+      return
+    end
+    # create a new branch
+    git worktree add .wt/$branch -b $branch && \
+      cd (git rev-parse --show-toplevel)/.wt/$branch
   end
 end
