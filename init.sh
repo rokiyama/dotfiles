@@ -54,6 +54,7 @@ brew install \
   tmux \
   unibilium \
   xz \
+  yq \
   || echo 'brew install failed, continuing' >&2
 
 [ $OSTYPE != "msys" ] && source ./linktohome.sh
@@ -149,7 +150,7 @@ mkdir -p $HOME/bin
 fish -c "fish_add_path $HOME/bin"
 
 # python
-type pip3 > /dev/null 2>&1 && pip3 install --user --upgrade pip-review pynvim Send2Trash yq
+type pip3 > /dev/null 2>&1 && pip3 install --user --upgrade pip-review pynvim Send2Trash
 
 # tpm
 TPM_DIR=$HOME/.cache/tmux/plugins/tpm
