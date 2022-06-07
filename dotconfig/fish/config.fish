@@ -89,7 +89,7 @@ if status is-interactive
 
     # fzf git
     function fzf_git_switch_branch
-      git branch -v $argv | grep -v '^\+' | fzf-tmux $FZF_DEFAULT_OPTS | sed 's/^[\*\+]//' | read -l result _
+      git branch -v $argv | grep -v '^\+' | fzf $FZF_DEFAULT_OPTS | sed 's/^[\*\+]//' | read -l result _
       if [ -z $result ]
         return
       end
@@ -102,12 +102,12 @@ if status is-interactive
     end
 
     function fzf_git_delete_branch
-      git branch -v | fzf-tmux $FZF_DEFAULT_OPTS | sed 's/^[\*\+]//' | read -l result _
+      git branch -v | fzf $FZF_DEFAULT_OPTS | sed 's/^[\*\+]//' | read -l result _
       git branch -d $result
     end
 
     function fzf_git_cd_worktree
-      git worktree list | fzf-tmux $FZF_DEFAULT_OPTS | read -l result
+      git worktree list | fzf $FZF_DEFAULT_OPTS | read -l result
       echo $result | sed 's/^[\*\+]//' | read -l path _
       if [ -z $path ]
         echo "No worktree selected"
@@ -121,7 +121,7 @@ if status is-interactive
     if type ghq > /dev/null 2>&1
       myfunc_log 'ghq is installed'
       function fzf_ghq_cd
-        ghq list | fzf-tmux $FZF_DEFAULT_OPTS | read -l result && cd (ghq root)"/$result"
+        ghq list | fzf $FZF_DEFAULT_OPTS | read -l result && cd (ghq root)"/$result"
       end
     else
       myfunc_err 'ghq is not installed.'
@@ -132,7 +132,7 @@ if status is-interactive
       myfunc_log 'z is installed'
       function fzf_z_jump
         # TODO: スペースのあるパスで正しく動作しない
-        z --list | fzf-tmux $FZF_DEFAULT_OPTS | read -l _ result _ && cd "$result"
+        z --list | fzf $FZF_DEFAULT_OPTS | read -l _ result _ && cd "$result"
       end
     else
       myfunc_err 'z is not installed.'
@@ -147,10 +147,10 @@ if status is-interactive
       if [ -z $target ]
         set target "pod"
       end
-      kubectl get $target -A | fzf-tmux $FZF_DEFAULT_OPTS --header-lines=1 | read -l ns name _ && commandline "kubectl get $target -n $ns $name"
+      kubectl get $target -A | fzf $FZF_DEFAULT_OPTS --header-lines=1 | read -l ns name _ && commandline "kubectl get $target -n $ns $name"
     end
     function fzf_kubectl_port_forward
-      kubectl get svc -A | fzf-tmux $FZF_DEFAULT_OPTS --header-lines=1 | read -l ns name _ _ _ port _ && commandline "kubectl port-forward -n $ns svc/$name "(echo $port | cut -d'/' -f1)
+      kubectl get svc -A | fzf $FZF_DEFAULT_OPTS --header-lines=1 | read -l ns name _ _ _ port _ && commandline "kubectl port-forward -n $ns svc/$name "(echo $port | cut -d'/' -f1)
     end
   else
     myfunc_err 'kubectl is not installed.'
