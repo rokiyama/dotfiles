@@ -95,12 +95,10 @@ if [[ $OSTYPE =~ ^darwin ]]; then
   brew install --cask \
     1password \
     alfred \
-    android-studio \
     deepl \
     discord \
     docker \
     evernote \
-    flutter \
     gimp \
     gitify \
     google-chrome \
