@@ -16,6 +16,7 @@ git pull
 
 # brew
 brew install \
+  asciidoctor \
   awscli \
   bat \
   fd \
