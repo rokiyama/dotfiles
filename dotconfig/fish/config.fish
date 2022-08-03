@@ -104,7 +104,7 @@ if status is-interactive
 
     function fzf_git_delete_branch
       git branch -v | $FZF_CMD | sed 's/^[\*\+]//' | read -l result _
-      git branch -d $result
+      commandline 'git branch -d '$result
     end
 
     function fzf_git_cd_worktree

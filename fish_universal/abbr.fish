@@ -40,7 +40,7 @@ abbr gps  git push
 abbr gr   git remote -v
 abbr gbs  fzf_git_switch_branch
 abbr gbsa fzf_git_switch_branch --all
-abbr gbd  git branch -d
+abbr gbd  fzf_git_delete_branch
 abbr gcw  fzf_git_cd_worktree
 abbr gw   git worktree
 abbr gwl  git worktree list
