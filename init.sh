@@ -20,22 +20,16 @@ brew install \
   awscli \
   bat \
   fd \
-  firebase-cli \
   fish \
   fzf \
-  gdbm \
   gh \
   ghq \
   git \
   go \
-  gotop \
-  grpcurl \
   hadolint \
   hugo \
   jq \
   k3d \
-  kubeseal \
-  kustomize \
   luajit \
   neovim \
   oniguruma \
@@ -46,12 +40,8 @@ brew install \
   rbenv \
   ripgrep \
   ruby-build \
-  rust \
   sqlite \
-  haskell-stack \
   starship \
-  svn \
-  tig \
   tmux \
   unibilium \
   xz \
@@ -66,9 +56,7 @@ if [[ $OSTYPE =~ ^darwin ]]; then
     bash \
     bluetoothconnector \
     coreutils \
-    findutils \
     gettext \
-    gnu-sed \
     icu4c \
     imagemagick \
     iperf3 \
@@ -106,13 +94,8 @@ if [[ $OSTYPE =~ ^darwin ]]; then
     inkscape \
     karabiner-elements \
     kindle \
-    numi \
     slack \
     visual-studio-code \
-    || echo 'brew install failed, continuing' >&2
-
-  brew tap earthly/earthly
-  brew install earthly/earthly/earthly \
     || echo 'brew install failed, continuing' >&2
 
   # fonts
