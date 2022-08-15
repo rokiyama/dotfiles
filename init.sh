@@ -87,7 +87,6 @@ if [[ $OSTYPE =~ ^darwin ]]; then
     deepl \
     docker \
     evernote \
-    gimp \
     gitify \
     google-chrome \
     inkscape \
