@@ -83,9 +83,8 @@ if [[ $OSTYPE =~ ^darwin ]]; then
 
   brew install --cask \
     1password \
-    alfred \
+    alacritty \
     deepl \
-    discord \
     docker \
     evernote \
     gimp \
