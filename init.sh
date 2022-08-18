@@ -91,7 +91,6 @@ if [[ $OSTYPE =~ ^darwin ]]; then
     google-chrome \
     inkscape \
     karabiner-elements \
-    kindle \
     slack \
     visual-studio-code \
     || echo 'brew install failed, continuing' >&2
