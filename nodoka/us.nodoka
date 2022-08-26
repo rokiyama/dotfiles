@@ -19,7 +19,7 @@ keymap Global
 
   key C-LeftSquareBracket = Esc
   key *Insert = *PrintScreen
-  
+
   key C-h = BackSpace
 
   # Custom modifier
@@ -37,6 +37,7 @@ keymap Global
   key M0-*i                 = *PageUp
   key M0-*o                 = *End
   key M0-*p                 = *PrintScreen
+  key M0-*a                 = *Applications
   key M0-*BS                = *Delete
   key M0-*_1                = *F1
   key M0-*_2                = *F2
