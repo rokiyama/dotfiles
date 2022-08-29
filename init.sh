@@ -121,12 +121,12 @@ fi
 # fzf
 readonly FZF_INSTALL_PATH=$(brew --prefix)/opt/fzf/install
 if [ -f $FZF_INSTALL_PATH ]; then
-  $FZF_INSTALL_PATH --no-bash --no-zsh
+  $FZF_INSTALL_PATH --all --no-bash --no-zsh
 fi
 
 # bin directory
 mkdir -p $HOME/bin
-fish -c "fish_add_path $HOME/bin"
+fish -c 'contains $HOME/bin $fish_user_paths; or fish_add_path $HOME/bin'
 
 # python
 type pip3 > /dev/null 2>&1 && pip3 install --user --upgrade pip-review pynvim Send2Trash
@@ -134,3 +134,12 @@ type pip3 > /dev/null 2>&1 && pip3 install --user --upgrade pip-review pynvim Se
 # tpm
 TPM_DIR=$HOME/.cache/tmux/plugins/tpm
 [[ -d $TPM_DIR ]] || git clone https://github.com/tmux-plugins/tpm.git $TPM_DIR
+
+# nvm
+NVM_DIR=$HOME/.nvm
+if [ ! -d $NVM_DIR ]; then
+  git clone https://github.com/nvm-sh/nvm.git $NVM_DIR
+  pushd $NVM_DIR
+  git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
+  popd
+fi
