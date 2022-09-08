@@ -10,8 +10,6 @@
 	ui = auto
 [push]
 	default = simple
-[include]
-	path = ~/.gitconfig.local
 [diff "utf16"]
 	textconv = iconv -f utf-16 -t utf-8
 [filter "lfs"]
