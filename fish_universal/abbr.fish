@@ -6,6 +6,7 @@ abbr d cd
 
 abbr tm  tmux
 abbr tma tmux attach
+abbr tml tmux list-sessions
 
 abbr h history
 abbr hc 'history | fzf | read -l result && [ -n $result ] && echo -n $result | pbcopy && echo Copied: (pbpaste)'
