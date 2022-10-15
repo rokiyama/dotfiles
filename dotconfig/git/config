@@ -51,3 +51,5 @@
 	protocol = https
 [init]
 	defaultBranch = main
+[grep]
+	lineNumber = true
