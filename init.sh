@@ -107,6 +107,9 @@ if [[ $OSTYPE =~ ^darwin ]]; then
 
   # mas
   mas install 497799835  # Xcode
+
+  # defaults
+  $DOTFILES_DIR/mac/defaults.sh
 fi
 
 # fish

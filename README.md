@@ -26,7 +26,4 @@ set -l USERNAME rokiyama && set -l USEREMAIL 57606749+rokiyama@users.noreply.git
 
 # install neovim (on debian)
 sudo apt-add-repository -y ppa:neovim-ppa/unstable && sudo apt update && sudo apt install -y neovim python3-neovim && sudo apt remove -y vim
-
-# disable long press on us key for accents (mac)
-defaults write -g ApplePressAndHoldEnabled -bool false
 ```
