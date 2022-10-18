@@ -90,7 +90,7 @@ if status is-interactive
 
     # fzf git
     function fzf_git_switch_branch
-      git branch -v $argv | grep -v '^\+' | $FZF_CMD | sed 's/^[\*\+]//' | read -l result _
+      git branch -v $argv | grep -v '^\+' | $FZF_CMD --tac | sed 's/^[\*\+]//' | read -l result _
       if [ -z $result ]
         return
       end
@@ -103,12 +103,12 @@ if status is-interactive
     end
 
     function fzf_git_delete_branch
-      git branch -v | $FZF_CMD | sed 's/^[\*\+]//' | read -l result _
+      git branch -v | $FZF_CMD --tac | sed 's/^[\*\+]//' | read -l result _
       commandline 'git branch -d '$result
     end
 
     function fzf_git_cd_worktree
-      git worktree list | $FZF_CMD | read -l result
+      git worktree list | $FZF_CMD --tac | read -l result
       echo $result | sed 's/^[\*\+]//' | read -l path _
       if [ -z $path ]
         echo "No worktree selected"
