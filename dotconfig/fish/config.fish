@@ -103,8 +103,11 @@ if status is-interactive
     end
 
     function fzf_git_delete_branch
-      git branch -v | $FZF_CMD --tac | sed 's/^[\*\+]//' | read -l result _
-      commandline 'git branch -d '$result
+      set -l result (git branch -v | $FZF_CMD --tac --multi | sed 's/^[\*\+]//' | awk '{print $1}')
+      if [ (count $result) -eq 0 ]
+        return
+      end
+      commandline 'git branch -d '(string join ' ' $result)
     end
 
     function fzf_git_cd_worktree
