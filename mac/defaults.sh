@@ -12,3 +12,6 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 # Disable "Automatically rearrange spaces based on most recent use"
 defaults write com.apple.dock 'mru-spaces' -bool false
+
+# Dim hidden apps
+defaults write com.apple.Dock showhidden -bool true
