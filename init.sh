@@ -85,7 +85,6 @@ if [[ $OSTYPE =~ ^darwin ]]; then
     1password \
     alacritty \
     blackhole-2ch \
-    deepl \
     docker \
     evernote \
     gitify \
