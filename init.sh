@@ -56,6 +56,7 @@ if [[ $OSTYPE =~ ^darwin ]]; then
     bash \
     bluetoothconnector \
     coreutils \
+    ffmpeg \
     gettext \
     icu4c \
     imagemagick \
