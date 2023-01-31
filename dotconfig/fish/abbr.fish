@@ -24,6 +24,7 @@ abbr tjq "jq -c '.time |= (./1000|todate)"
 abbr gs   git status -sb
 abbr gb   git branch -v
 abbr gba  git branch -av
+abbr gbm  git branch -m
 abbr ga   git add
 abbr gap  git add -p
 abbr gc   git commit -v
@@ -36,8 +37,10 @@ abbr gla  git log --graph --all --oneline --decorate
 abbr glg  git log --graph --decorate --format=fuller
 abbr glga git log --graph --all --decorate --format=fuller
 abbr glp  git log --graph --decorate -p
+abbr glm  git log --format=%B -n 1
 abbr gpl  git pull
 abbr gps  git push
+abbr gpsu git push -u origin HEAD
 abbr gr   git remote -v
 abbr gbs  fzf_git_switch_branch
 abbr gbsa fzf_git_switch_branch --all

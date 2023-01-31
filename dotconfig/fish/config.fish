@@ -200,3 +200,7 @@ if status is-interactive
       cd (git rev-parse --show-toplevel)/.wt/$branch
   end
 end
+
+source $HOME/.config/fish/abbr.fish
+
+source $HOME/.config/op/plugins.sh
