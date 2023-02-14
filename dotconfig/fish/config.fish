@@ -84,7 +84,7 @@ if status is-interactive
   # fzf
   if type fzf > /dev/null 2>&1
     myfunc_log 'fzf is installed'
-    set FZF_CMD fzf-tmux
+    set FZF_CMD fzf
     set -ax FZF_DEFAULT_OPTS "--tiebreak=index"
     set -ax FZF_DEFAULT_OPTS "--toggle-sort=ctrl-r"
 

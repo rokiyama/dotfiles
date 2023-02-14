@@ -41,6 +41,7 @@ abbr glm  git log --format=%B -n 1
 abbr gpl  git pull
 abbr gps  git push
 abbr gpsu git push -u origin HEAD
+abbr gpsf git push -f
 abbr gr   git remote -v
 abbr gbs  fzf_git_switch_branch
 abbr gbsa fzf_git_switch_branch --all
