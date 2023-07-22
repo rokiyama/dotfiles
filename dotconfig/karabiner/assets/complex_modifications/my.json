@@ -333,6 +333,40 @@
       ]
     },
     {
+      "description": "右コマンドキーを単体で押したときにかなキーを送信する。",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_command",
+            "modifiers": {"optional": ["any"]}},
+          "parameters": {
+            "basic.to_if_held_down_threshold_milliseconds": 100
+          },
+          "to": [{"key_code": "right_command", "lazy": true}],
+          "to_if_held_down": [{"key_code": "right_command"}],
+          "to_if_alone": [{"key_code": "japanese_kana"}]
+        }
+      ]
+    },
+    {
+      "description": "右オプションキーを単体で押したときにかなキーを送信する。",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_option",
+            "modifiers": {"optional": ["any"]}},
+          "parameters": {
+            "basic.to_if_held_down_threshold_milliseconds": 100
+          },
+          "to": [{"key_code": "right_option", "lazy": true}],
+          "to_if_held_down": [{"key_code": "right_option"}],
+          "to_if_alone": [{"key_code": "japanese_kana"}]
+        }
+      ]
+    },
+    {
       "description": "Use d as Cmd+Delete in Photos",
       "manipulators": [
         {
@@ -390,6 +424,72 @@
           "to": [
             {
               "shell_command": "'/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli' --select-profile 'US MacBook'"
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "Quit application by holding command-q (only left)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "q",
+            "modifiers": {
+              "mandatory": [
+                "left_command"
+              ],
+              "optional": [
+                "caps_lock"
+              ]
+            }
+          },
+          "to_if_held_down": [
+            {
+              "key_code": "q",
+              "modifiers": [
+                "left_command"
+              ],
+              "repeat": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "左コントロールキーを単体で押したときにEscキーと英数キーを送信する。",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "left_control",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "parameters": {
+            "basic.to_if_held_down_threshold_milliseconds": 100
+          },
+          "to": [
+            {
+              "key_code": "left_control",
+              "lazy": true
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "escape"
+            },
+            {
+              "key_code": "japanese_eisuu"
+            }
+          ],
+          "to_if_held_down": [
+            {
+              "key_code": "left_control"
             }
           ],
           "type": "basic"
