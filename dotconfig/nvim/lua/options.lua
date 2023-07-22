@@ -3,6 +3,7 @@ vim.opt.mouse = a
 vim.opt.clipboard:append("unnamedplus")
 vim.opt.expandtab = true
 vim.opt.autoindent = true
+vim.opt.ignorecase = true
 vim.opt.smartindent = true
 vim.opt.cindent = true
 vim.opt.smartcase = true
