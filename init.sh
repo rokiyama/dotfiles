@@ -56,8 +56,10 @@ if [[ $OSTYPE =~ ^darwin ]]; then
     bash \
     bluetoothconnector \
     coreutils \
+    discord \
     ffmpeg \
     gettext \
+    git-secrets \
     icu4c \
     imagemagick \
     iperf3 \
@@ -107,7 +109,7 @@ if [[ $OSTYPE =~ ^darwin ]]; then
     || echo 'brew install failed, continuing' >&2
 
   # mas
-  mas install 497799835  # Xcode
+  #mas install 497799835  # Xcode
 
   # defaults
   $DOTFILES_DIR/mac/defaults.sh
