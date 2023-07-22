@@ -53,3 +53,5 @@
 	defaultBranch = main
 [grep]
 	lineNumber = true
+[commit]
+	verbose = true
