@@ -14,4 +14,14 @@ vim.keymap.set('n', '<A-v>', '$v^')
 vim.keymap.set('i', 'jj', '<ESC>')
 
 vim.keymap.set('n', '<leader>/', '/\\v')
-vim.keymap.set('n',  '<C-n>', ':nohlsearch<CR>')
+
+vim.keymap.set('n', '<C-n>', ':nohlsearch<CR>')
+
+vim.keymap.set('n', '<leader>m', '@a')
+
+if vim.g.vscode then
+  vim.keymap.set("n", "gD", "<Cmd>call VSCodeNotify('editor.action.goToImplementation')<CR>")
+  vim.keymap.set("n", "gr", "<Cmd>call VSCodeNotify('editor.action.goToReferences')<CR>")
+  vim.keymap.set("n", "<leader>b", "<Cmd>call VSCodeNotify('bookmarks.toggle')<CR>")
+else
+end

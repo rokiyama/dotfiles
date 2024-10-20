@@ -3,5 +3,3 @@
 *.swp
 .DS_Store
 /.wt/*
-node_modules
-dist

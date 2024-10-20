@@ -90,7 +90,7 @@ if status is-interactive
 
     # fzf git
     function fzf_git_switch_branch
-      git branch -v $argv | grep -v '^\+' | $FZF_CMD --tac | sed 's/^[\*\+]//' | read -l result _
+      git branch -v $argv | grep -v '^\+' | $FZF_CMD --tac | sed 's/^[\*\+]//' | read -l result unused
       if [ -z $result ]
         return
       end
@@ -112,7 +112,7 @@ if status is-interactive
 
     function fzf_git_cd_worktree
       git worktree list | $FZF_CMD --tac | read -l result
-      echo $result | sed 's/^[\*\+]//' | read -l path _
+      echo $result | sed 's/^[\*\+]//' | read -l path unused
       if [ -z $path ]
         echo "No worktree selected"
       else
@@ -136,7 +136,7 @@ if status is-interactive
       myfunc_log 'z is installed'
       function fzf_z_jump
         # TODO: スペースのあるパスで正しく動作しない
-        z --list | $FZF_CMD | read -l _ result _ && cd "$result"
+        z --list | $FZF_CMD | read -l unused result unused && cd "$result"
       end
     else
       myfunc_err 'z is not installed.'
@@ -151,10 +151,10 @@ if status is-interactive
       if [ -z $target ]
         set target "pod"
       end
-      kubectl get $target -A | $FZF_CMD --header-lines=1 | read -l ns name _ && commandline "kubectl get $target -n $ns $name"
+      kubectl get $target -A | $FZF_CMD --header-lines=1 | read -l ns name unused && commandline "kubectl get $target -n $ns $name"
     end
     function fzf_kubectl_port_forward
-      kubectl get svc -A | $FZF_CMD --header-lines=1 | read -l ns name _ _ _ port _ && commandline "kubectl port-forward -n $ns svc/$name "(echo $port | cut -d'/' -f1)
+      kubectl get svc -A | $FZF_CMD --header-lines=1 | read -l ns name unused unused unused port unused && commandline "kubectl port-forward -n $ns svc/$name "(echo $port | cut -d'/' -f1)
     end
   else
     myfunc_err 'kubectl is not installed.'
