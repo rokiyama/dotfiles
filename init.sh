@@ -19,6 +19,7 @@ brew install \
   asciidoctor \
   awscli \
   bat \
+  deno \
   fd \
   fish \
   fzf \
@@ -36,6 +37,7 @@ brew install \
   openssl \
   pandoc \
   pcre2 \
+  pipx \
   python \
   rbenv \
   ripgrep \
@@ -136,8 +138,9 @@ fi
 mkdir -p $HOME/bin
 fish -c 'contains $HOME/bin $fish_user_paths; or fish_add_path $HOME/bin'
 
-# python
-type pip3 > /dev/null 2>&1 && pip3 install --user --upgrade pip-review pynvim Send2Trash
+# pipx
+type pipx > /dev/null 2>&1 && pipx install pip-review
+type pipx > /dev/null 2>&1 && pipx install Send2Trash
 
 # tpm
 TPM_DIR=$HOME/.cache/tmux/plugins/tpm

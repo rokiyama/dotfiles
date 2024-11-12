@@ -1,4 +1,5 @@
 {
+    "global": { "show_profile_name_in_menu_bar": true },
     "profiles": [
         {
             "complex_modifications": {
@@ -1119,6 +1120,30 @@
                                 "type": "basic"
                             }
                         ]
+                    },
+                    {
+                        "description": "左コントロールキーを単体で押したときにEscキーと英数キーを送信する。",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "left_control",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "parameters": { "basic.to_if_held_down_threshold_milliseconds": 100 },
+                                "to": [
+                                    {
+                                        "key_code": "left_control",
+                                        "lazy": true
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    { "key_code": "escape" },
+                                    { "key_code": "japanese_eisuu" }
+                                ],
+                                "to_if_held_down": [{ "key_code": "left_control" }],
+                                "type": "basic"
+                            }
+                        ]
                     }
                 ]
             },
@@ -1199,27 +1224,18 @@
                     "to": [{ "key_code": "left_command" }]
                 },
                 {
-                    "from": { "key_code": "quote" },
-                    "to": [{ "key_code": "semicolon" }]
-                },
-                {
-                    "from": { "key_code": "return_or_enter" },
-                    "to": [{ "key_code": "quote" }]
-                },
-                {
                     "from": { "key_code": "right_control" },
                     "to": [{ "apple_vendor_top_case_key_code": "keyboard_fn" }]
                 },
                 {
                     "from": { "key_code": "right_option" },
                     "to": [{ "key_code": "right_command" }]
-                },
-                {
-                    "from": { "key_code": "semicolon" },
-                    "to": [{ "key_code": "return_or_enter" }]
                 }
             ],
-            "virtual_hid_keyboard": { "country_code": 0 }
+            "virtual_hid_keyboard": {
+                "country_code": 0,
+                "keyboard_type_v2": "ansi"
+            }
         },
         {
             "complex_modifications": {
@@ -1833,7 +1849,6 @@
                 }
             ],
             "name": "US MacBook",
-            "selected": true,
             "virtual_hid_keyboard": {
                 "country_code": 0,
                 "keyboard_type_v2": "ansi"
@@ -1843,49 +1858,6 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "左コマンドキーを単体で押したときに英数キーを送信する。",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "left_command",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "parameters": { "basic.to_if_held_down_threshold_milliseconds": 100 },
-                                "to": [
-                                    {
-                                        "key_code": "left_command",
-                                        "lazy": true
-                                    }
-                                ],
-                                "to_if_alone": [{ "key_code": "japanese_eisuu" }],
-                                "to_if_held_down": [{ "key_code": "left_command" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Quit application by holding command-q (only left)",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "q",
-                                    "modifiers": {
-                                        "mandatory": ["left_command"],
-                                        "optional": ["caps_lock"]
-                                    }
-                                },
-                                "to_if_held_down": [
-                                    {
-                                        "key_code": "q",
-                                        "modifiers": ["left_command"],
-                                        "repeat": false
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "escキーを押したときに、英数キーも送信する（vim用）",
                         "manipulators": [
                             {
@@ -1894,6 +1866,35 @@
                                     { "key_code": "escape" },
                                     { "key_code": "japanese_eisuu" }
                                 ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Exchange single and double quote",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "quote",
+                                    "modifiers": { "optional": ["caps_lock"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "quote",
+                                        "modifiers": ["left_shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "quote",
+                                    "modifiers": {
+                                        "mandatory": ["shift"],
+                                        "optional": ["caps_lock"]
+                                    }
+                                },
+                                "to": [{ "key_code": "quote" }],
                                 "type": "basic"
                             }
                         ]
@@ -1928,22 +1929,23 @@
                         ]
                     },
                     {
-                        "description": "右オプションキーを単体で押したときにかなキーを送信する。",
+                        "description": "Quit application by holding command-q (only left)",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "right_option",
-                                    "modifiers": { "optional": ["any"] }
+                                    "key_code": "q",
+                                    "modifiers": {
+                                        "mandatory": ["left_command"],
+                                        "optional": ["caps_lock"]
+                                    }
                                 },
-                                "parameters": { "basic.to_if_held_down_threshold_milliseconds": 100 },
-                                "to": [
+                                "to_if_held_down": [
                                     {
-                                        "key_code": "right_option",
-                                        "lazy": true
+                                        "key_code": "q",
+                                        "modifiers": ["left_command"],
+                                        "repeat": false
                                     }
                                 ],
-                                "to_if_alone": [{ "key_code": "japanese_kana" }],
-                                "to_if_held_down": [{ "key_code": "right_option" }],
                                 "type": "basic"
                             }
                         ]
@@ -1965,8 +1967,18 @@
                     ]
                 }
             ],
-            "name": "Corne",
-            "virtual_hid_keyboard": { "country_code": 0 }
+            "fn_function_keys": [
+                {
+                    "from": { "key_code": "f5" },
+                    "to": [{ "key_code": "f5" }]
+                }
+            ],
+            "name": "Corne V4",
+            "selected": true,
+            "virtual_hid_keyboard": {
+                "country_code": 0,
+                "keyboard_type_v2": "ansi"
+            }
         }
     ]
 }
