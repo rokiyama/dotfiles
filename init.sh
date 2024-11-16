@@ -39,6 +39,7 @@ brew install \
   pcre2 \
   pipx \
   python \
+  qmk \
   rbenv \
   ripgrep \
   ruby-build \
@@ -84,26 +85,25 @@ if [[ $OSTYPE =~ ^darwin ]]; then
     watch \
     || echo 'brew install failed, continuing' >&2
 
-  brew tap homebrew/cask
-
   brew install --cask \
     1password \
+    1password-cli \
     alacritty \
-    blackhole-2ch \
+    chatgpt \
     docker \
-    evernote \
-    gitify \
+    figma \
     google-chrome \
-    hot \
-    inkscape \
+    istat-menus@6 \
     karabiner-elements \
-    numi \
+    notion \
+    obs \
+    obsidian \
+    raycast \
     slack \
     visual-studio-code \
     || echo 'brew install failed, continuing' >&2
 
   # fonts
-  brew tap homebrew/cask-fonts
   brew install --cask \
     font-fira-code-nerd-font \
     font-fira-mono-nerd-font \
@@ -124,7 +124,7 @@ if [ -f $FISH_PATH ]; then
   if [ $SHELL != $(which fish) ]; then
     chsh -s $FISH_PATH
   fi
-  fish -c "source $DOTFILES_DIR/fish_universal/abbr.fish"
+  fish -c "source $DOTFILES_DIR/dotconfig/fish/abbr.fish"
   [ $OSTYPE = "linux-gnu" ] && fish -c "source $DOTFILES_DIR/fish_universal/linuxbrew.fish"
 fi
 
@@ -147,10 +147,4 @@ TPM_DIR=$HOME/.cache/tmux/plugins/tpm
 [[ -d $TPM_DIR ]] || git clone https://github.com/tmux-plugins/tpm.git $TPM_DIR
 
 # nvm
-NVM_DIR=$HOME/.nvm
-if [ ! -d $NVM_DIR ]; then
-  git clone https://github.com/nvm-sh/nvm.git $NVM_DIR
-  pushd $NVM_DIR
-  git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
-  popd
-fi
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
