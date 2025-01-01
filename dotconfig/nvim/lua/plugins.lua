@@ -26,6 +26,9 @@ require("lazy").setup({
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     event = "VeryLazy",
+    cond = function()
+      return vim.g.vscode == nil
+    end,
     config = function()
       require("lualine").setup()
     end
