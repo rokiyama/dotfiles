@@ -1,6 +1,3 @@
-# delete all
-abbr -e (abbr -l)
-
 abbr l ls -lhav
 abbr d cd
 
