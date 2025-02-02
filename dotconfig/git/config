@@ -6,6 +6,8 @@
 	editor = nvim
 	excludesfile = ~/.config/git/ignore_global
 	autocrlf = false
+	pager = less -i
+	quotepath = false
 [color]
 	ui = auto
 [push]
@@ -55,3 +57,5 @@
 	lineNumber = true
 [commit]
 	verbose = true
+[url "git@bitbucket.org:"]
+	insteadOf = https://bitbucket.org/
