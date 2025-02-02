@@ -43,6 +43,9 @@ require("lazy").setup({
   {
     'windwp/nvim-autopairs',
     event = "InsertEnter",
+    cond = function()
+      return vim.g.vscode == nil
+    end,
     opts = {} -- this is equalent to setup({}) function
   }
 })
