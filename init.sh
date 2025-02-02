@@ -39,7 +39,7 @@ brew install \
   pcre2 \
   pipx \
   python \
-  qmk \
+  qmk/qmk/qmk \
   rbenv \
   ripgrep \
   ruby-build \
