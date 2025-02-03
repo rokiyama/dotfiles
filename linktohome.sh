@@ -14,4 +14,9 @@ ln -s -f $dotfiles_dir/.my.cnf
 ln -s -f $dotfiles_dir/.psqlrc
 ln -s -f $dotfiles_dir/.vim
 
-[ -d $HOME/.config ] || ln -s -f $dotfiles_dir/dotconfig $HOME/.config
+[ -d $HOME/.config ] || mkdir $HOME/.config
+for f in $dotfiles_dir/dotconfig/*
+do
+  echo $f
+  ln -s -f $f $HOME/.config/ $(basename $f)
+done

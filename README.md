@@ -8,6 +8,9 @@
 
 # init
 curl -sSLo- https://raw.githubusercontent.com/rokiyama/dotfiles/master/init.sh | bash
+
+# or setup for Linux
+curl -sSLo- https://raw.githubusercontent.com/rokiyama/dotfiles/master/scripts/setup.sh | bash
 ```
 
 ## Update submodules
